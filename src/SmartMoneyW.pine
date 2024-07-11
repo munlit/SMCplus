@@ -1,264 +1,218 @@
-//              ▓▓▓▓  ▓▓▓▓  ▓▓██  ▓▓██                      
-//              ▓▓▒▒▓▓▒▒▒▒▓▓▒▒▒▒▓▓▒▒▓▓                      
-//              ▓▓▒▒▒▒▒▒░░░░░░▒▒▒▒▒▒▓▓                      
-//                ▓▓▒▒▒▒░░░░░░▒▒▒▒▓▓                        
-//                 ▓▓▒▒░░░░░░▒▒▓▓                          
-//                   ▓▓▒▒▒▒▒▒██   
-//                   ▓▓▓▓▓▓▓▓▓▓              
-//               ▓▓▓▓▒▒▒▒▒▒▒▒▒▒▓▓▓▓                              ████████ 
-//             ▓▓▒▒░░░░▒▒▒▒▒▒▒▒▒▒▒▒▓▓                           ██████████         
-//           ▓▓▒▒░░▒▒▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▓▓                        ██        ██                       
-//         ▓▓▒▒░░▒▒▒▒░░░░░░░░░░▒▒▒▒▒▒▒▒▓▓                      ██▄▄▄▄▄▄▄▄▄█         
-//       ▓▓▒▒░░▒▒▒▒░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▓▓                    ██▀███ ███▀█        
-//     ▓▓▒▒░░▒▒▒▒░░░░░░░░██░░░░░░░░▒▒▒▒▒▒▒▒▓▓    █             ▀█        █▀        
-//     ▓▓░░▒▒▒▒▒▒░░░░░░██████░░░░░░▒▒▒▒▒▒▒▒▓▓    ██                  █              
-//   ▓▓▒▒░░▒▒▒▒░░░░░░██░░░░░░██░░░░░░▒▒▒▒▒▒▒▒▓▓   █              ██     ██                                                                                  
-//   ▓▓░░▒▒▒▒▒▒░░░░░░██░░░░░░██░░░░░░▒▒▒▒▒▒▒▒▓▓ /█▄            ████─██──████                                                                                   
-// ▓▓▒▒░░▒▒▒▒░░░░░░░░░░██░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▓▓ ▄███████████████──██──██████                                                                                
-// ▓▓░░▒▒▒▒▒▒░░░░░░░░░░░░██░░░░░░░░░░░░▒▒▒▒▒▒▒▒▓▓    █████████████──██──█████████                                                                             
-// ▓▓░░▒▒▒▒▒▒░░░░░░░░░░░░░░██░░░░░░░░░░▒▒▒▒▒▒▒▒▓▓             ████──██─█████  ███                                                                              
-// ▓▓▒▒▒▒▒▒▒▒░░░░░░░░██░░░░░░██░░░░░░░░▒▒▒▒▒▒▒▒▓▓              ███──██─█████  ███                                                                             
-// ▓▓▒▒▒▒▒▒▒▒░░░░░░░░██░░░░░░██░░░░░░░░▒▒▒▒▒▒▒▒▓▓              ███─────█████████                                                                           
-//   ▓▓▒▒▒▒▒▒▒▒░░░░░░░░██████░░░░░░░░▒▒▒▒▒▒▒▒▓▓                ██─────████████▀                                                                            
-//   ▓▓▒▒▒▒▒▒▒▒░░░░░░░░░░██░░░░░░░░░░▒▒▒▒▒▒▒▒▓▓                  ██████████                                                                                 
-//    ▓▓▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▓▓                   ██████████                                                                                
-//    ▓▓▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▓▓                     ████████                                                                               
-//    ▓▓▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▓▓                      ██████████▄▄                                                                        
-//    ▓▓▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▓▓                      █████████▀                                                                           
-//      ▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓                           ███   ███                                                                          
-//        ▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓                             ███   ███                                                                                 
-//            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                                ██████   ▀                                                                                   
-//             ▓▓░░░░░░▓▓░░░░░░░░▓▓░░                               ▀▄▄▄▄▀                                                                          
-//                             
-// ██╗    ██╗███████╗██╗      ██████╗ ████████╗██████╗  █████╗ ██████╗ ███████╗███████╗ 
-// ██║    ██║██╔════╝██║     ██╔═══██╗╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔════╝ 
-// ██║ █╗ ██║█████╗  ██║     ██║   ██║   ██║   ██████╔╝███████║██║  ██║█████╗  ███████╗ 
-// ██║███╗██║██╔══╝  ██║     ██║   ██║   ██║   ██╔══██╗██╔══██║██║  ██║██╔══╝  ╚════██║ 
-// ╚███╔███╔╝███████╗███████╗╚██████╔╝   ██║   ██║  ██║██║  ██║██████╔╝███████╗███████║ 
-//  ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝ 
-
-// This Pine Script™ code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
 // © WeloTrades
 
 //@version=5
-indicator(title = 'Smart Money Concepts by WeloTrades', shorttitle = 'SMC {WeloTrades}', overlay = true, max_boxes_count = 500, max_labels_count = 500, max_lines_count = 500, max_bars_back = 5000)
+indicator(title = 'Smart Money Concepts [Allen]', shorttitle = 'SMC [Allen]', overlay = true, max_boxes_count = 500, max_labels_count = 500, max_lines_count = 500, max_bars_back = 5000)
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////      INPUTS      ///////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//// ───────────────────────
+/// ─── OB INPUT SETTINGS//
+//// ───────────────────────
+var grpOBs					= '───── OB SETTINGS ─────'
 
-//////////////////////
-//OB INPUT SETTINGS//
-////////////////////
 // OB Settings for multiple timeframes //
-timeframe1Enabled = input.bool(true, "TF #1 🕑", inline = '1', group = "++++++++++++++ OB SETTINGS ++++++++++++++")
-timeframe1 = input.timeframe("", "", inline = '1', group = "++++++++++++++ OB SETTINGS ++++++++++++++")
-timeframe2Enabled = input.bool(false, "TF #2 🕑", inline = '1', group = "++++++++++++++ OB SETTINGS ++++++++++++++")
-timeframe2 = input.timeframe("", "", inline = '1', group = "++++++++++++++ OB SETTINGS ++++++++++++++", tooltip="Select Display from Timeframe #1 + select Timeframe / Select Display from Timeframe #2 + select Timeframe")
+timeframe1Enabled			= input.bool		(defval = true,			title = "TF #1",				inline = '1',			group = grpOBs)
+tmeframe1					= input.timeframe	(defval = "",			title = "",						inline = '1',			group = grpOBs)
+tmeframe2Enabled			= input.bool		(defval = false,		title = "TF #2",				inline = '1',			group = grpOBs)
+tmeframe2					= input.timeframe	(defval = "",			title = "",						inline = '1',			group = grpOBs,		tooltip="Select Display from Timeframe #1 + select Timeframe / Select Display from Timeframe #2 + select Timeframe")
 
 // Swing OB settings //
-swingLength = input.int(10, '📏 Swing OB Length', minval = 3, inline = '2_', group = "++++++++++++++ OB SETTINGS ++++++++++++++", display = display.none, tooltip="Set the length for Swing OB.")
-zoneCount = input.string("5", '🔍 Max OB', options = ["10", "5", "3", "1"], inline = '2', group = "++++++++++++++ OB SETTINGS ++++++++++++++", display = display.none)
-bullOrderBlockColor = input.color(color.rgb(0, 255, 0, 50), '', inline = '2', group = '++++++++++++++ OB SETTINGS ++++++++++++++', display = display.none)
-bearOrderBlockColor = input.color(color.rgb(255, 0, 21, 50), '', inline = '2', group = '++++++++++++++ OB SETTINGS ++++++++++++++', display = display.none, tooltip="Select the number of zones for Swing OB / Color for bullish order block / Color for bearish order block.")
-obEndMethod = input.string("Close", "📛 Mitigation Method", options = ["Wick", "Close"], inline = '3', group = "++++++++++++++ OB SETTINGS ++++++++++++++", display = display.none)
-showInvalidated = input.bool(false, "historical", inline = '3', group = "++++++++++++++ OB SETTINGS ++++++++++++++", display = display.none, tooltip="Method for OB mitigation / Show invalidated historical OBs.")
+swingLength					= input.int			(defval = 10,			title = 'Swing OB Length',		inline = '2_',			group = grpOBs,		minval = 3,	display = display.none,	tooltip = "Set the length for Swing OB.")
+zoneCount					= input.string		(defval = "5",			title = 'Max OB', 				inline = '2', 			group = grpOBs,		options = ["10", "5", "3", "1"],	display = display.none)
+bullOrderBlockColor			= input.color		(color.rgb(0, 255, 0, 50), title = '',					inline = '2',			group = grpOBs,		display = display.none)
+bearOrderBlockColor			= input.color		(color.rgb(255, 0, 21, 50), title = '',					inline = '2',			group = grpOBs,		display = display.none,				tooltip = "Select the number of zones for Swing OB / Color for bullish order block / Color for bearish order block.")
+obEndMethod					= input.string		(defval = "Close",		title = "Mitigation Method",	inline = '3',			group = grpOBs,		options = ["Wick", "Close"],		display = display.none)
+showInvalidated				= input.bool		(defval = false,		title = "historical",			inline = '3',			group = grpOBs,		display = display.none,				tooltip = "Method for OB mitigation / Show invalidated historical OBs.")
 
 // OB box length settings //
-obBoxLengthOption = input.string("Extended Range", "↔ OB Range", options = ["Range", "Extended Range"], inline = '4', group = "++++++++++++++ OB SETTINGS ++++++++++++++")
-adjustableLength = input.int(22000, "", minval = 1000, maxval = 500000, step = 1000, inline = '4', group = "++++++++++++++ OB SETTINGS ++++++++++++++", tooltip="Set Length for OB box (extended range = adjustable)")
+obBoxLengthOption			= input.string		(defval = "Extended Range",	title = "↔ OB Range",		inline = '4',			group = grpOBs,		options = ["Range", "Extended Range"])
+adjustableLength			= input.int			(defval = 22000,		title = "",						inline = '4',			group = grpOBs,		minval = 1000,	maxval = 500000,	step = 1000,	tooltip="Set Length for OB box (extended range = adjustable)")
 
 // OB Text size and individual toggle display boxes //
-textSizeOption = input.string("M", "💬 Text Options", options = ["XS", "S", "M", "L", "XL"], inline = '5', group = "++++++++++++++ OB SETTINGS ++++++++++++++")
-textColor = input.color(color.rgb(255, 255, 255), "", inline = '5', group = "++++++++++++++ OB SETTINGS ++++++++++++++")
-showTimeframeOB = input.bool(true, "TF Text", inline = '5', group = "++++++++++++++ OB SETTINGS ++++++++++++++")
-showVolume = input.bool(true, "Volume", inline = '5', group = "++++++++++++++ OB SETTINGS ++++++++++++++")
-showPercentage = input.bool(true, "%", inline = '5', group = "++++++++++++++ OB SETTINGS ++++++++++++++", tooltip= "Set Text Size & Color for OB / Toggle Display to show or hide 'TEXT','VOLUME','%'")
+textSizeOption				= input.string		(defval = "M",			title = "Text Options", 		inline = '5',			group = grpOBs,		options = ["XS", "S", "M", "L", "XL"])
+textColor					= input.color		(color.rgb(255, 255, 255), title = "",					inline = '5',			group = grpOBs)
+sowTimeframeOB				= input.bool		(defval = true,			title = "TF Text",				inline = '5',			group = grpOBs)
+sowVolume					= input.bool		(defval = true,			title = "Volume",				inline = '5',			group = grpOBs)
+sowPercentage				= input.bool		(defval = true,			title = "%",					inline = '5',			group = grpOBs,		tooltip= "Set Text Size & Color for OB / Toggle Display to show or hide 'TEXT','VOLUME','%'")
 
 // OB locked settings //
-OBsEnabled = true
-const bool DEBUG = false
-combineOBs = DEBUG ? input.bool(true, "Combine Zones", group = "++++++++++++++ GENERAL CONFIGURATION ++++++++++++++", display = display.none) : true
-maxATRMult = DEBUG ? input.float(3.5,"Max Atr Multiplier", group = "++++++++++++++ GENERAL CONFIGURATION ++++++++++++++") : 3.5
-bullishOrderBlocks = zoneCount == "1" ? 1 : zoneCount == "3" ? 3 : zoneCount == "5" ? 5 : zoneCount == "10" ? 10 : 20
-bearishOrderBlocks = zoneCount == "1" ? 1 : zoneCount == "3" ? 3 : zoneCount == "5" ? 5 : zoneCount == "10" ? 10 : 20
-extendZonesBy = DEBUG ? input.int(15, "Extend Zones", group = "++++++++++++++ STYLE ++++++++++++++", minval = 1, maxval = 30, inline = "ExtendZones") : 15
-extendZonesDynamic = DEBUG ? input.bool(true, "Dynamic", group = "++++++++++++++ STYLE ++++++++++++++", inline = "ExtendZones") : true
-combinedText = DEBUG ? input.bool(false, "Combined Text", group = "++++++++++++++ STYLE ++++++++++++++", inline = "CombinedColor") : false
-volumeBarsPlace = DEBUG ? input.string("Left", "Show Volume Bars At", options = ["Left", "Right"], group = "++++++++++++++ STYLE ++++++++++++++", inline = "volumebars") : "Left"
-mirrorVolumeBars = DEBUG ? input.bool(true, "Mirror Volume Bars", group = "++++++++++++++ STYLE ++++++++++++++", inline = "volumebars") : true
-volumeBarsLeftSide = (volumeBarsPlace == "Left")
-extendZonesByTime = extendZonesBy * timeframe.in_seconds(timeframe.period) * 1000
+var grpGENERAL					= '───── GENERAL CONFIGURATION ─────'
+
+OBsEnabled					= true
+const bool DEBUG			= false
+combineOBs					= DEBUG				? input.bool	(defval = true,		title = "Combine Zones",					group = grpGENERAL,	display = display.none) : true
+maxATRMult					= DEBUG				? input.float	(defval = 3.5,		title = "Max Atr Multiplier",				group = grpGENERAL)	: 3.5
+
+bullishOrderBlocks			= zoneCount			== "1"	? 1	: zoneCount == "3" ? 3 : zoneCount == "5" ? 5 : zoneCount == "10" ? 10 : 20
+bearishOrderBlocks			= zoneCount			== "1"	? 1	: zoneCount == "3" ? 3 : zoneCount == "5" ? 5 : zoneCount == "10" ? 10 : 20
+
+var grpSTYLE					= '───── STYLE ─────'
+
+extendZonesBy				= DEBUG				? input.int		(defval = 15,		title = "Extend Zones",				inline = "ExtendZones",		group = grpSTYLE,	minval = 1, maxval = 30) : 15
+extendZonesDynamic			= DEBUG				? input.bool	(defval = true,		title = "Dynamic",					inline = "ExtendZones",		group = grpSTYLE)	: true
+combinedText				= DEBUG				? input.bool	(defval = false,	title = "Combined Text",			inline = "CombinedColor",	group = grpSTYLE)	: false
+volumeBarsPlace				= DEBUG				? input.string	(defval = "Left",	title = "Show Volume Bars At",		inline = "volumebars",		group = grpSTYLE,	options = ["Left", "Right"]) : "Left"
+mirrorVolumeBars			= DEBUG				? input.bool	(defval = true,		title = "Mirror Volume Bars",		inline = "volumebars",		group = grpSTYLE)	: true
+volumeBarsLeftSide			= (volumeBarsPlace	== "Left")
+extendZonesByTime			= extendZonesBy		* timeframe.in_seconds(timeframe.period) * 1000
 atr = ta.atr(10)
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/////////////////////////////////////
-// FAIR VALUE GAPS INPUT SETTINGS //
-///////////////////////////////////
+//// ─────────────────────── 
+/// ─── FAIR VALUE GAPS INPUT SETTINGS //
+//// ─────────────────────── 
 // FVG Settings for timeframes //
-show_fvg             = input(true, 'FVG TF 🕑' , inline = 'tf' , group = '++++++++++++++ FAIR VALUE GAPS ++++++++++++++')
-i_tf                 = input.timeframe("", "" , inline = 'tf' , group = '++++++++++++++ FAIR VALUE GAPS ++++++++++++++' , tooltip="Toggle visibility of Fair Value Gaps / Select Timeframe to Display on Chart")
+var grpFVG					= '───── FAIR VALUE GAPS ─────'
+
+show_fvg					= input				(defval = true,			title = 'FVG TF',				inline = 'tf',			group = grpFVG)
+i_tf						= input.timeframe	(defval = "",			title = "" ,					inline = 'tf',			group = grpFVG,		tooltip="Toggle visibility of Fair Value Gaps / Select Timeframe to Display on Chart")
 
 // FVG Settings for Mitigation //
-mittigation_filt_fvg = input.string('Wicks', '📛 Mitigation Method',options = ['Touch','Wicks','Close','Average'] , inline = "m1" , group = '++++++++++++++ FAIR VALUE GAPS ++++++++++++++')
-fvg_color_fill       = input.bool(true,"Fill" , inline = "m1" , group = '++++++++++++++ FAIR VALUE GAPS ++++++++++++++')
-fvg_shade_fill       = input.bool(false,"Shade" , inline = "m1" , group = '++++++++++++++ FAIR VALUE GAPS ++++++++++++++', tooltip="Select the method to mitigate Fair Value Gaps / Toggle to fill Fair Value Gaps / Toggle to shade Fair Value Gaps")
-mid_style            = input.string('Dotted', '〰 Line Style', ['Solid', 'Dashed', 'Dotted'] , inline="mid" , group = '++++++++++++++ FAIR VALUE GAPS ++++++++++++++')
-i_midPointColor      = input.color(#ffffff, "" , inline="mid", group = '++++++++++++++ FAIR VALUE GAPS ++++++++++++++', tooltip="Select the style for mid line of Fair Value Gaps / Select color for mid line of Fair Value Gaps")
+mittigation_filt_fvg		= input.string		(defval = 'Wicks',		title = 'Mitigation Method',	inline = "m1",			group = grpFVG,		options = ['Touch','Wicks','Close','Average'])
+fvg_color_fill				= input.bool		(defval = true,			title = "Fill" ,				inline = "m1",			group = grpFVG)
+fvg_shade_fill				= input.bool		(defval = false,		title = "Shade" ,				inline = "m1",			group = grpFVG,		tooltip = "Select the method to mitigate Fair Value Gaps / Toggle to fill Fair Value Gaps / Toggle to shade Fair Value Gaps")
+mid_style					= input.string		(defval = 'Dotted',		title = '〰 Line Style',		inline = "mid",			group = grpFVG,		options = ['Solid', 'Dashed', 'Dotted'])
+i_midPointColor				= input.color		(#ffffff,				title = "" ,					inline = "mid",			group = grpFVG,		tooltip = "Select the style for mid line of Fair Value Gaps / Select color for mid line of Fair Value Gaps")
 
 // FVG Count Settings //
-max_fvg              = input.int(defval = 5,title = "🔍 Max FVG", minval = 0, maxval = 50 , inline = "O1" , group = '++++++++++++++ FAIR VALUE GAPS ++++++++++++++')
-i_mtfbearishfvgcolor = input.color(color.rgb(255, 255, 255, 75) , "" , inline = "O1" , group = '++++++++++++++ FAIR VALUE GAPS ++++++++++++++')
-i_mtfbullishfvgcolor = input.color(color.rgb(255, 255, 255, 75), "" , inline = "O1" , group = '++++++++++++++ FAIR VALUE GAPS ++++++++++++++', tooltip="Set the maximum number of Fair Value Gaps to display / Select color for bearish Fair Value Gaps / Select color for bullish Fair Value Gaps")
+max_fvg						= input.int			(defval = 5,				title = "Max FVG",			inline = "O1",			group = grpFVG,		minval = 0,	maxval = 50)
+i_mtfbearishfvgcolor		= input.color		(color.rgb(255, 255, 255, 75) ,		title = "" ,		inline = "O1",			group = grpFVG)
+i_mtfbullishfvgcolor		= input.color		(color.rgb(255, 255, 255, 75),		title = "" ,		inline = "O1",			group = grpFVG,		tooltip="Set the maximum number of Fair Value Gaps to display / Select color for bearish Fair Value Gaps / Select color for bullish Fair Value Gaps")
 
 // FVG Length Settings //
-length_extend        = input.int(defval = 20,title = "↔ FVG Range", minval = 0, maxval = 100 , inline = "O2" , group = '++++++++++++++ FAIR VALUE GAPS ++++++++++++++')
-fvg_extend           = input.bool(false,"Extend ⏭" , inline = "O2" , group = '++++++++++++++ FAIR VALUE GAPS ++++++++++++++')
-fvg_extend_B         = input.bool(true,"Range ⏯ " , inline = "O2" , group = '++++++++++++++ FAIR VALUE GAPS ++++++++++++++', tooltip="Set the length of Fair Value Gaps / Toggle to extend Fair Value Gaps / Toggle (RANGE) option to extend Fair Value Gaps")
+length_extend				= input.int			(defval = 20,			title = "↔ FVG Range",			inline = "O2",			group = grpFVG,		minval = 0,	maxval = 100)
+fvg_extend					= input.bool		(defval = false,		title = "Extend" ,				inline = "O2",			group = grpFVG)
+fvg_extend_B				= input.bool		(defval = true,			title = "Range" ,				inline = "O2",			group = grpFVG,		tooltip="Set the length of Fair Value Gaps / Toggle to extend Fair Value Gaps / Toggle (RANGE) option to extend Fair Value Gaps")
 
 // FVG Filter Settings //
-max_width_fvg        = input.float(1.5, '↕ Max Width', minval = 0, maxval = 5.0, step = 0.1 , inline = 'width' , group = '++++++++++++++ FAIR VALUE GAPS ++++++++++++++')
-remove_small         = input.bool(true,"Filter FVG ♻" , inline = "width" , group = '++++++++++++++ FAIR VALUE GAPS ++++++++++++++', tooltip="Set the maximum width of Fair Value Gaps / Toggle to filter out small Fair Value Gaps")
+max_width_fvg				= input.float		(defval = 1.5,			title = '↕ Max Width',			inline = 'width',		group = grpFVG,		minval = 0, maxval = 5.0, step = 0.1)
+remove_small				= input.bool		(defval = true,			title = "Filter FVG" ,			inline = "width",		group = grpFVG,		tooltip="Set the maximum width of Fair Value Gaps / Toggle to filter out small Fair Value Gaps")
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////
-// LIQUIDITY LEVELS INPUT SETTINGS //
-////////////////////////////////////
+//// ─────────────────────── 
+/// ─── LIQUIDITY LEVELS INPUT SETTINGS //
+//// ─────────────────────── 
 // Liquidity Settings for timeframes //
-currentTF             = input.bool(true, title = "Liquidity TF 🕑", inline = "1", group = '++++++++++++++ LIQUIDITY LEVELS ++++++++++++++')
-htfTF                 = input.timeframe("", title = "", inline = "1", group = '++++++++++++++ LIQUIDITY LEVELS ++++++++++++++', tooltip = "Toggle visibility of Liquidity Levels / Select Timeframe for Liquidity Levels")
-leftBars              = input.int(10, title = "📏 Liquidity Length", inline = "1_", group = '++++++++++++++ LIQUIDITY LEVELS ++++++++++++++', tooltip = "Set the length for Pivot calculation")
-displayStyle_liq      = "Boxes"
+currentTF					= input.bool(true, title = "Liquidity TF 🕑", inline = "1", group = '───── LIQUIDITY LEVELS ─────')
+htfTF						= input.timeframe("", title = "", inline = "1", group = '───── LIQUIDITY LEVELS ─────', tooltip = "Toggle visibility of Liquidity Levels / Select Timeframe for Liquidity Levels")
+leftBars					= input.int(10, title = "📏 Liquidity Length", inline = "1_", group = '───── LIQUIDITY LEVELS ─────', tooltip = "Set the length for Pivot calculation")
+displayStyle_liq			= "Boxes"
 
 // Liquidity Buy Side Count Settings //
-displayLimitBuy       = input.int(5, title = "🔍 Max Buy Side Levels", inline = "2", group = '++++++++++++++ LIQUIDITY LEVELS ++++++++++++++')
-highLineColorHTF      = input.color(color.rgb(0, 38, 255, 75), "", inline = "2", group = '++++++++++++++ LIQUIDITY LEVELS ++++++++++++++', tooltip = "Set the maximum number of Buy Side Liquidity Levels to display / Select color for Buy Side Liquidity Levels")
-highBoxBorderColorHTF = color.new(highLineColorHTF, 90)
+displayLimitBuy				= input.int(5, title = "🔍 Max Buy Side Levels", inline = "2", group = '───── LIQUIDITY LEVELS ─────')
+highLineColorHTF			= input.color(color.rgb(0, 38, 255, 75), "", inline = "2", group = '───── LIQUIDITY LEVELS ─────', tooltip = "Set the maximum number of Buy Side Liquidity Levels to display / Select color for Buy Side Liquidity Levels")
+highBoxBorderColorHTF		= color.new(highLineColorHTF, 90)
 
 // Liquidity Sell Side Count Settings //
-displayLimitSell      = input.int(5, title = "🔍 Max Sell Side Levels", inline = "3", group = '++++++++++++++ LIQUIDITY LEVELS ++++++++++++++')
-lowLineColorHTF       = input.color(color.rgb(255, 0, 0, 75), "", inline = "3", group = '++++++++++++++ LIQUIDITY LEVELS ++++++++++++++', tooltip = "Set the maximum number of Sell Side Liquidity Levels to display / Select color for Sell Side Liquidity Levels")
-lowBoxBorderColorHTF  = color.new(lowLineColorHTF, 90)
+displayLimitSell			= input.int(5, title = "🔍 Max Sell Side Levels", inline = "3", group = '───── LIQUIDITY LEVELS ─────')
+lowLineColorHTF				= input.color(color.rgb(255, 0, 0, 75), "", inline = "3", group = '───── LIQUIDITY LEVELS ─────', tooltip = "Set the maximum number of Sell Side Liquidity Levels to display / Select color for Sell Side Liquidity Levels")
+lowBoxBorderColorHTF		= color.new(lowLineColorHTF, 90)
 
 // Liquidity Mitigation Settings //
-mitiOptions           = input.string("Remove", title = "📛 Mitigation Method", inline = "4", options = ["Remove", "Show"], group = '++++++++++++++ LIQUIDITY LEVELS ++++++++++++++')
-_candleType           = input.string("Close", title = "", options = ["Close", "Wick"], inline = '4', group = '++++++++++++++ LIQUIDITY LEVELS ++++++++++++++', tooltip ="Select option to display or hide mitigated levels / Select mitigation method")
+mitiOptions					= input.string("Remove", title = "📛 Mitigation Method", inline = "4", options = ["Remove", "Show"], group = '───── LIQUIDITY LEVELS ─────')
+_candleType					= input.string("Close", title = "", options = ["Close", "Wick"], inline = '4', group = '───── LIQUIDITY LEVELS ─────', tooltip ="Select option to display or hide mitigated levels / Select mitigation method")
 
 // Liquidity Box Style Settings //
-box_width             = input.float(-5, title = "✂ Box Style  ↕", minval = -50, maxval = 50, step = 0.5, inline = "5", group = '++++++++++++++ LIQUIDITY LEVELS ++++++++++++++')
-length_extend_liq     = input.int(defval = 20, title = "↔", minval = 0, maxval = 500, inline = "5", group = '++++++++++++++ LIQUIDITY LEVELS ++++++++++++++')
-extentionMax          = input.bool(false, title = "Extend ⏭", inline = "5", group = '++++++++++++++ LIQUIDITY LEVELS ++++++++++++++', tooltip = "Set the box width for liquidity levels / Set the box length of Liquidity Levels / Toggle to extend Liquidity Levels")
-_highLineStyleHTF     = "Solid"
-highLineStyleHTF      = _highLineStyleHTF == "Solid" ? line.style_solid : _highLineStyleHTF == "Dashed" ? line.style_dashed : line.style_dotted
-lineWidthHTF          = 2
+box_width					= input.float(-5, title = "✂ Box Style  ↕", minval = -50, maxval = 50, step = 0.5, inline = "5", group = '───── LIQUIDITY LEVELS ─────')
+length_extend_liq			= input.int(defval = 20, title = "↔", minval = 0, maxval = 500, inline = "5", group = '───── LIQUIDITY LEVELS ─────')
+extentionMax				= input.bool(false, title = "Extend ⏭", inline = "5", group = '───── LIQUIDITY LEVELS ─────', tooltip = "Set the box width for liquidity levels / Set the box length of Liquidity Levels / Toggle to extend Liquidity Levels")
+_highLineStyleHTF			= "Solid"
+highLineStyleHTF			= _highLineStyleHTF == "Solid" ? line.style_solid : _highLineStyleHTF == "Dashed" ? line.style_dashed : line.style_dotted
+lineWidthHTF				= 2
 
 // Liquidity Text Style Settings //
-textSize              = input.string("S", "💬 Text Options", options=["XS", "S", "M", "L", "XL"], inline = '6', group = '++++++++++++++ LIQUIDITY LEVELS ++++++++++++++')
-liquidity_text_color  = input.color(#ffffff, '', inline = '6', group = '++++++++++++++ LIQUIDITY LEVELS ++++++++++++++')
-show_text             = input.bool(true, "Text", inline = '6', group = '++++++++++++++ LIQUIDITY LEVELS ++++++++++++++')
-show_volume           = input.bool(true, "Volume", inline = '6', group = '++++++++++++++ LIQUIDITY LEVELS ++++++++++++++')
-show_percentage       = input.bool(true, "%", inline = '6', group = '++++++++++++++ LIQUIDITY LEVELS ++++++++++++++', tooltip = "Select Size / color for text displaying inside the Liquidity Levels / Toggle Display: Text , Volume , %")
+textSize					= input.string("S", "💬 Text Options", options=["XS", "S", "M", "L", "XL"], inline = '6', group = '───── LIQUIDITY LEVELS ─────')
+liquidity_text_color		= input.color(#ffffff, '', inline = '6', group = '───── LIQUIDITY LEVELS ─────')
+show_text					= input.bool(true, "Text", inline = '6', group = '───── LIQUIDITY LEVELS ─────')
+show_volume					= input.bool(true, "Volume", inline = '6', group = '───── LIQUIDITY LEVELS ─────')
+show_percentage				= input.bool(true, "%", inline = '6', group = '───── LIQUIDITY LEVELS ─────', tooltip = "Select Size / color for text displaying inside the Liquidity Levels / Toggle Display: Text , Volume , %")
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////
-// BOS & CHOCH MARKET STRUCTURE INPUT SETTINGS //
-////////////////////////////////////////////////
+//// ─────────────────────── 
+/// ─── BOS & CHOCH MARKET STRUCTURE INPUT SETTINGS //
+//// ─────────────────────── 
 // Internal BOS & CHOCH Settings //
-showInternalMS        = input(true, title="Internal MS Length 📏",inline="2", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
-internalLength        = input.int(10, title="",inline="2", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++", tooltip="Toggle visibility of Internal Market Structure / Set the length for Internal Market Structure")
-label_sizes_Internal_ = input.string("S", options=["S", "M","L"], title="💬 Internal MS Text Style", inline="2_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
-internalBullColor     = input.color(color.rgb(0, 135, 0), title="",inline="2_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
-internalBearColor     = input.color(color.rgb(135, 0, 0), title="",inline="2_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++", tooltip="Set the size of text for Market Structure / Select color for bullish Internal Market Structure / Select color for bearish Internal Market Structure")
-label_size_Internal_s = label_sizes_Internal_ == "S" ? size.tiny : label_sizes_Internal_ == "M" ? size.small : label_sizes_Internal_ == "L" ? size.normal : size.small
-label_size_Internal   = label_size_Internal_s
+showInternalMS				= input(true, title="Internal MS Length 📏",inline="2", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
+internalLength				= input.int(10, title="",inline="2", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++", tooltip="Toggle visibility of Internal Market Structure / Set the length for Internal Market Structure")
+label_sizes_Internal_		= input.string("S", options=["S", "M","L"], title="💬 Internal MS Text Style", inline="2_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
+internalBullColor			= input.color(color.rgb(0, 135, 0), title="",inline="2_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
+internalBearColor			= input.color(color.rgb(135, 0, 0), title="",inline="2_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++", tooltip="Set the size of text for Market Structure / Select color for bullish Internal Market Structure / Select color for bearish Internal Market Structure")
+label_size_Internal_s		= label_sizes_Internal_ == "S" ? size.tiny : label_sizes_Internal_ == "M" ? size.small : label_sizes_Internal_ == "L" ? size.normal : size.small
+label_size_Internal			= label_size_Internal_s
 
 // External BOS(+) & CHOCH(+) Settings //
-showExternalMS        = input(true, title="External MS Length 📏",inline="3", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
-externalLength        = input.int(50, title="",inline="3", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++", tooltip="Toggle visibility of External Market Structure / Set the length for External Market Structure")
-label_size_External_  = input.string("M", options=["S", "M","L"], title="💬 External MS Text Style", inline="3_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
-externalBullColor     = input.color(color.rgb(0, 255, 0), title="",inline="3_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
-externalBearColor     = input.color(color.rgb(255, 0, 0), title="",inline="3_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++", tooltip="Set the size of text for Market Structure / Select color for bullish External Market Structure / Select color for bearish External Market Structure")
-label_size_External_s = label_size_External_ == "S" ? size.tiny : label_size_External_ == "M" ? size.small : label_size_External_ == "L" ? size.normal : size.small
-label_size_External   = label_size_External_s
+showExternalMS				= input(true, title="External MS Length 📏",inline="3", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
+externalLength				= input.int(50, title="",inline="3", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++", tooltip="Toggle visibility of External Market Structure / Set the length for External Market Structure")
+label_size_External_		= input.string("M", options=["S", "M","L"], title="💬 External MS Text Style", inline="3_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
+externalBullColor			= input.color(color.rgb(0, 255, 0), title="",inline="3_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
+externalBearColor			= input.color(color.rgb(255, 0, 0), title="",inline="3_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++", tooltip="Set the size of text for Market Structure / Select color for bullish External Market Structure / Select color for bearish External Market Structure")
+label_size_External_s		= label_size_External_ == "S" ? size.tiny : label_size_External_ == "M" ? size.small : label_size_External_ == "L" ? size.normal : size.small
+label_size_External			= label_size_External_s
 
 // EQH & EQL Settings //
-show_equal_highlow    = input(true, 'EQL & EQH Threshold 📐', inline='4', group='++++++++++++++ MARKET STRUCTURE ++++++++++++++')
-eq_threshold          = input.float(0.3, '', minval=0, maxval=10, step=0.1, inline='4', group="++++++++++++++ MARKET STRUCTURE ++++++++++++++", tooltip="Toggle visibility of Equal Lows & Highs / Set the threshold for Equal Lows & Highs")
-label_size_Equal_     = input.string("S", options=["S", "M","L"], title="💬 EQL & EQH Text Style", inline="4_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
-eq_bull_color         = input.color(color.rgb(0, 255, 0), '', inline="4_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
-eq_bear_color         = input.color(color.rgb(255, 0, 0), '', inline="4_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++", tooltip="Set the size of text for Equal Lows & Highs / Select color for Equal Lows & Highs")
-label_size_Equal_s    = label_size_Equal_ == "S" ? size.tiny : label_size_Equal_ == "M" ? size.small : label_size_Equal_ == "L" ? size.normal : size.small
-label_size_Equal      = label_size_Equal_s
+show_equal_highlow			= input(true, 'EQL & EQH Threshold 📐', inline='4', group='++++++++++++++ MARKET STRUCTURE ++++++++++++++')
+eq_threshold				= input.float(0.3, '', minval=0, maxval=10, step=0.1, inline='4', group="++++++++++++++ MARKET STRUCTURE ++++++++++++++", tooltip="Toggle visibility of Equal Lows & Highs / Set the threshold for Equal Lows & Highs")
+label_size_Equal_			= input.string("S", options=["S", "M","L"], title="💬 EQL & EQH Text Style", inline="4_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
+eq_bull_color				= input.color(color.rgb(0, 255, 0), '', inline="4_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
+eq_bear_color				= input.color(color.rgb(255, 0, 0), '', inline="4_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++", tooltip="Set the size of text for Equal Lows & Highs / Select color for Equal Lows & Highs")
+label_size_Equal_s			= label_size_Equal_ == "S" ? size.tiny : label_size_Equal_ == "M" ? size.small : label_size_Equal_ == "L" ? size.normal : size.small
+label_size_Equal			= label_size_Equal_s
 
 // Swing Point Settings //
-showSwing             = input.bool(true, 'Swing Points Length 📏', inline="1", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
-swingSize_swing       = input.int(10, '', inline="1", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++", tooltip="Toggle visibility of Swing Points / Set the length for Swing Points")
-label_sizes_swing_    = input.string("M", options=["S", "M","L"], title="💬 Swing Points Text Style", inline="1_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++", tooltip="Set the size of text for Swing Points / Select color for Swing Points")
-swingColor            = input.color(color.rgb(255, 255, 255), '', inline="1_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
-swingSize             = 5
-length_eqh            = 5
-color CLEAR           = color.rgb(0, 0, 0, 100)
-label_size_swing_s    = label_sizes_swing_ == "S" ? size.tiny : label_sizes_swing_ == "M" ? size.small : label_sizes_swing_ == "L" ? size.normal : size.small
-label_size_swing      = label_size_swing_s
+showSwing					= input.bool(true, 'Swing Points Length 📏', inline="1", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
+swingSize_swing				= input.int(10, '', inline="1", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++", tooltip="Toggle visibility of Swing Points / Set the length for Swing Points")
+label_sizes_swing_			= input.string("M", options=["S", "M","L"], title="💬 Swing Points Text Style", inline="1_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++", tooltip="Set the size of text for Swing Points / Select color for Swing Points")
+swingColor					= input.color(color.rgb(255, 255, 255), '', inline="1_", group="++++++++++++++ MARKET STRUCTURE ++++++++++++++")
+swingSize					= 5
+length_eqh					= 5
+color CLEAR					= color.rgb(0, 0, 0, 100)
+label_size_swing_s			= label_sizes_swing_ == "S" ? size.tiny : label_sizes_swing_ == "M" ? size.small : label_sizes_swing_ == "L" ? size.normal : size.small
+label_size_swing			= label_size_swing_s
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////      CALCULATIONS / FUNCTIONS      /////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//------------------------------------------------------------------------------------------------------------------------------------------------------//
-//---------------------------------------------------------------      GLOBAL VARIABLES      -----------------------------------------------------------//
-//------------------------------------------------------------------------------------------------------------------------------------------------------//
+//// ───────────────────────
+/// ─── GLOBAL VARIABLES
+//// ───────────────────────
 
 // GLOBAL VARIABLES FUNCTIONS //
-i_bullishfvgcolor = #ffc40041
-i_bearishfvgcolor = #ffc4003f
-i_textColor       = #ffffff
-i_fillByMid       = true
-i_deleteonfill    = true
-i_mtf             = "HTF"
-i_tfos            = 10
-i_mtfos           = 50
-v_buy             = color.rgb(0, 219, 255, 70)
-v_sell            = color.rgb(233, 30, 99, 70)
-show_iob          = true 
-show_ob           = true 
-show_iob_mtf      = true
-show_ob_mtf       = true 
-ob_showlast       = 10
-iob_showlast      = 10
-max_width_ob      = 3
-max_width_ob     := max_width_ob == 3 ? 20 : max_width_ob
-style             = 'Colored'
-v_lookback        = 10
-ob_loockback      = 50
-timediff          = (time[1] - time[101]) / 100
-tf_s1             = timeframe2 == '' ? timeframe.period : timeframe2
-timeframe_st      = not(str.contains(tf_s1, 'S')) and not(str.contains(tf_s1, 'D')) and not(str.contains(tf_s1, 'W')) and not(str.contains(tf_s1, 'M')) ? str.tonumber(tf_s1) >= 60 ? str.tostring(str.tonumber(tf_s1) / 60) + "H" : tf_s1 + "M" : tf_s1
-color transparent = #ffffff00
-length            = 50
-is_newbar(res)    =>
-    t             = time(res)
-    not na(t) and (na(t[1]) or t > t[1])
+i_bullishfvgcolor			= #ffc40041
+i_bearishfvgcolor			= #ffc4003f
+i_textColor					= #ffffff
+i_fillByMid					= true
+i_deleteonfill				= true
+i_mtf						= "HTF"
+i_tfos						= 10
+i_mtfos						= 50
+v_buy						= color.rgb(0, 219, 255, 70)
+v_sell						= color.rgb(233, 30, 99, 70)
+show_iob					= true 
+show_ob						= true 
+show_iob_mtf				= true
+show_ob_mtf					= true 
+ob_showlast					= 10
+iob_showlast				= 10
+max_width_ob				= 3
+max_width_ob				:= max_width_ob == 3 ? 20 : max_width_ob
+style						= 'Colored'
+v_lookback					= 10
+ob_loockback				= 50
+timediff					= (time[1] - time[101]) / 100
+tf_s1						= timeframe2 == '' ? timeframe.period : timeframe2
+timeframe_st				= not(str.contains(tf_s1, 'S')) and not(str.contains(tf_s1, 'D')) and not(str.contains(tf_s1, 'W')) and not(str.contains(tf_s1, 'M')) ? str.tonumber(tf_s1) >= 60 ? str.tostring(str.tonumber(tf_s1) / 60) + "H" : tf_s1 + "M" : tf_s1
+color transparent			= #ffffff00
+length						= 50
+is_newbar(res)				=>
+	t             = time(res)
+	not na(t) and (na(t[1]) or t > t[1])
 
 Show_MS(x, y, txt, css, dashed, down, lbl_size)=>
-    label.new(int(math.avg(x, bar_index)), y, txt, color = transparent, textcolor = css, style = down ? label.style_label_down : label.style_label_up, size = lbl_size)
-    line.new(x, y, bar_index, y, color = css, style = dashed ? line.style_dashed : line.style_solid)
+	label.new(int(math.avg(x, bar_index)), y, txt, color = transparent, textcolor = css, style = down ? label.style_label_down : label.style_label_up, size = lbl_size)
+	line.new(x, y, bar_index, y, color = css, style = dashed ? line.style_dashed : line.style_solid)
 
 f_barssince(_cond, _count) =>
-    _barssince = bar_index - ta.valuewhen(_cond, bar_index, _count)
-    _barssince
+	_barssince = bar_index - ta.valuewhen(_cond, bar_index, _count)
+	_barssince
 
 calculate_swing_points(length)=>
-    var prev = 0
-    prev := high[length] > ta.highest(length) ? 0 : low[length] < ta.lowest(length) ? 1 : prev[1]
-    t = prev == 0 and prev[1] != 0 ? high[length] : 0
-    b = prev == 1 and prev[1] != 1 ? low[length] : 0
-    [t, b]
+	var prev = 0
+	prev := high[length] > ta.highest(length) ? 0 : low[length] < ta.lowest(length) ? 1 : prev[1]
+	t = prev == 0 and prev[1] != 0 ? high[length] : 0
+	b = prev == 1 and prev[1] != 1 ? low[length] : 0
+	[t, b]
 
 var t_MS = 0, var int_t_MS = 0
 var internal_y_up = 0., var internal_x_up = 0, var internal_y_dn = 0., var internal_x_dn = 0
@@ -271,85 +225,85 @@ var high_text = '',  var low_text = ''
 bullish_OB_Break = false 
 bearish_OB_Break = false
 
-//------------------------------------------------------------------------------------------------------------------------------------------------------//
-//---------------------------------------------------------------      OB CALCULATIONS & FUNCTIONS      ------------------------------------------------//
-//------------------------------------------------------------------------------------------------------------------------------------------------------//
+//// ───────────────────────
+/// ─── OB CALCULATIONS & FUNCTIONS
+//// ───────────────────────
 type orderBlockInfo
-    float top
-    float bottom
-    float obVolume
-    string obType
-    int startTime
-    float bbVolume
-    float obLowVolume
-    float obHighVolume
-    bool breaker
-    int breakTime
-    string timeframeStr
-    bool disabled = false
-    string combinedTimeframesStr = na
-    bool combined = false
+	float top
+	float bottom
+	float obVolume
+	string obType
+	int startTime
+	float bbVolume
+	float obLowVolume
+	float obHighVolume
+	bool breaker
+	int breakTime
+	string timeframeStr
+	bool disabled = false
+	string combinedTimeframesStr = na
+	bool combined = false
 
 type orderBlock
-    orderBlockInfo info
-    bool isRendered = false
+	orderBlockInfo info
+	bool isRendered = false
 
-    box orderBox = na
-    box breakerBox = na
+	box orderBox = na
+	box breakerBox = na
 
-    line orderBoxLineTop = na
-    line orderBoxLineBottom = na
-    line breakerBoxLineTop = na
-    line breakerBoxLineBottom = na
-    
-    box orderBoxText = na
-    box orderBoxPositive = na
-    box orderBoxNegative = na
+	line orderBoxLineTop = na
+	line orderBoxLineBottom = na
+	line breakerBoxLineTop = na
+	line breakerBoxLineBottom = na
+	
+	box orderBoxText = na
+	box orderBoxPositive = na
+	box orderBoxNegative = na
 
-    line orderSeperator = na
-    line orderTextSeperator = na
+	line orderSeperator = na
+	line orderTextSeperator = na
 
 createOrderBlock (orderBlockInfo orderBlockInfoF) =>
-    orderBlock newOrderBlock = orderBlock.new(orderBlockInfoF)
-    newOrderBlock
+	orderBlock newOrderBlock = orderBlock.new(orderBlockInfoF)
+	newOrderBlock
 
 safeDeleteOrderBlock (orderBlock orderBlockF) =>
-    orderBlockF.isRendered := false
+	orderBlockF.isRendered := false
 
-    box.delete(orderBlockF.orderBox)
-    box.delete(orderBlockF.breakerBox)
-    box.delete(orderBlockF.orderBoxText)
-    box.delete(orderBlockF.orderBoxPositive)
-    box.delete(orderBlockF.orderBoxNegative)
+	box.delete(orderBlockF.orderBox)
+	box.delete(orderBlockF.breakerBox)
+	box.delete(orderBlockF.orderBoxText)
+	box.delete(orderBlockF.orderBoxPositive)
+	box.delete(orderBlockF.orderBoxNegative)
 
-    line.delete(orderBlockF.orderBoxLineTop)
-    line.delete(orderBlockF.orderBoxLineBottom)
-    line.delete(orderBlockF.breakerBoxLineTop)
-    line.delete(orderBlockF.breakerBoxLineBottom)
-    line.delete(orderBlockF.orderSeperator)
-    line.delete(orderBlockF.orderTextSeperator)
+	line.delete(orderBlockF.orderBoxLineTop)
+	line.delete(orderBlockF.orderBoxLineBottom)
+	line.delete(orderBlockF.breakerBoxLineTop)
+	line.delete(orderBlockF.breakerBoxLineBottom)
+	line.delete(orderBlockF.orderSeperator)
+	line.delete(orderBlockF.orderTextSeperator)
 
 type timeframeInfo
-    int index = na
-    string timeframeStr = na
-    bool isEnabled = false
+	int index = na
+	string timeframeStr = na
+	bool isEnabled = false
 
-    orderBlockInfo[] bullishOrderBlocksList = na
-    orderBlockInfo[] bearishOrderBlocksList = na
+	orderBlockInfo[] bullishOrderBlocksList = na
+	orderBlockInfo[] bearishOrderBlocksList = na
 
 newTimeframeInfo (index, timeframeStr, isEnabled) =>
-    newTFInfo = timeframeInfo.new()
-    newTFInfo.index := index
-    newTFInfo.isEnabled := isEnabled
-    newTFInfo.timeframeStr := timeframeStr
+	newTFInfo = timeframeInfo.new()
+	newTFInfo.index := index
+	newTFInfo.isEnabled := isEnabled
+	newTFInfo.timeframeStr := timeframeStr
 
-    newTFInfo
+	newTFInfo
 
 type obSwing
-    int x = na    
-    float y = na
-    float swingVolume = na
-    bool crossed = false
+	int x = na    
+	float y = na
+	float swingVolume = na
+	bool crossed = false
 
 const float overlapThresholdPercentage = 0
 const int maxDistanceToLastBar = 1750 
@@ -361,364 +315,364 @@ var bearishOrderBlocksList = array.new<orderBlockInfo>(0)
 var allOrderBlocksList = array.new<orderBlock>(0)
 
 moveLine(_line, _x, _y, _x2) =>
-    line.set_xy1(_line, _x,  _y)
-    line.set_xy2(_line, _x2, _y)
+	line.set_xy1(_line, _x,  _y)
+	line.set_xy2(_line, _x2, _y)
 
 moveBox (_box, _topLeftX, _topLeftY, _bottomRightX, _bottomRightY) =>
-    box.set_lefttop(_box, _topLeftX, _topLeftY)
-    box.set_rightbottom(_box, _bottomRightX, _bottomRightY)
+	box.set_lefttop(_box, _topLeftX, _topLeftY)
+	box.set_rightbottom(_box, _bottomRightX, _bottomRightY)
 
 isTimeframeLower (timeframe1F, timeframe2F) =>
-    timeframe.in_seconds(timeframe1F) < timeframe.in_seconds(timeframe2F)
+	timeframe.in_seconds(timeframe1F) < timeframe.in_seconds(timeframe2F)
 
 getMinTimeframe (timeframe1F, timeframe2F) =>
-    if isTimeframeLower(timeframe1F, timeframe2F)
-        timeframe1F
-    else
-        timeframe2F
+	if isTimeframeLower(timeframe1F, timeframe2F)
+		timeframe1F
+	else
+		timeframe2F
 
 getMaxTimeframe (timeframe1F, timeframe2F) =>
-    if isTimeframeLower(timeframe1F, timeframe2F)
-        timeframe2F
-    else
-        timeframe1F
+	if isTimeframeLower(timeframe1F, timeframe2F)
+		timeframe2F
+	else
+		timeframe1F
 
 formatTimeframeString (formatTimeframe) =>
-    timeframeF = formatTimeframe == "" ? timeframe.period : formatTimeframe
-    
-    if str.contains(timeframeF, "D") or str.contains(timeframeF, "W") or str.contains(timeframeF, "S") or str.contains(timeframeF, "M")
-        timeframeF
-    else
-        seconds = timeframe.in_seconds(timeframeF)
-        if seconds >= 3600
-            hourCount = int(seconds / 3600)
-            str.tostring(hourCount) + " Hour" + (hourCount > 1 ? "s" : "")
-        else
-            timeframeF + " Min"
+	timeframeF = formatTimeframe == "" ? timeframe.period : formatTimeframe
+	
+	if str.contains(timeframeF, "D") or str.contains(timeframeF, "W") or str.contains(timeframeF, "S") or str.contains(timeframeF, "M")
+		timeframeF
+	else
+		seconds = timeframe.in_seconds(timeframeF)
+		if seconds >= 3600
+			hourCount = int(seconds / 3600)
+			str.tostring(hourCount) + " Hour" + (hourCount > 1 ? "s" : "")
+		else
+			timeframeF + " Min"
 
 betterCross(s1, s2) =>
-    string ret = na
-    if s1 >= s2 and s1[1] < s2
-        ret := "Bull"
-    if s1 < s2 and s1[1] >= s2
-        ret := "Bear"
-    ret
+	string ret = na
+	if s1 >= s2 and s1[1] < s2
+		ret := "Bull"
+	if s1 < s2 and s1[1] >= s2
+		ret := "Bear"
+	ret
 
 colorWithTransparency (colorF, transparencyX) =>
-    color.new(colorF, color.t(colorF) * transparencyX)
+	color.new(colorF, color.t(colorF) * transparencyX)
 
 createOBBox (boxColor, textSize, transparencyX = 1.0, xlocType = xloc.bar_time) =>
-    box.new(na, na, na, na, text_size = textSize, xloc = xlocType, extend = extend.none, bgcolor = colorWithTransparency(boxColor, transparencyX), text_color = textColor, text_halign = text.align_center, border_color = #00000000)
+	box.new(na, na, na, na, text_size = textSize, xloc = xlocType, extend = extend.none, bgcolor = colorWithTransparency(boxColor, transparencyX), text_color = textColor, text_halign = text.align_center, border_color = #00000000)
 
 getTextSize(textSizeOption) =>
-    if textSizeOption == "XS"
-        size.tiny
-    else if textSizeOption == "S"
-        size.small
-    else if textSizeOption == "M"
-        size.normal    
-    else if textSizeOption == "L"
-        size.large
-    else if textSizeOption == "XL"
-        size.huge    
+	if textSizeOption == "XS"
+		size.tiny
+	else if textSizeOption == "S"
+		size.small
+	else if textSizeOption == "M"
+		size.normal    
+	else if textSizeOption == "L"
+		size.large
+	else if textSizeOption == "XL"
+		size.huge    
 
 
 renderOrderBlock (orderBlock ob) =>
-    orderBlockInfo info = ob.info
-    ob.isRendered := true
-    orderColor = ob.info.obType == "Bull" ? bullOrderBlockColor : bearOrderBlockColor
+	orderBlockInfo info = ob.info
+	ob.isRendered := true
+	orderColor = ob.info.obType == "Bull" ? bullOrderBlockColor : bearOrderBlockColor
 
-    if OBsEnabled and (not false or not (false and info.breaker)) and not (not showInvalidated and info.breaker)
-        textSize = getTextSize(textSizeOption)
-        ob.orderBox := createOBBox(orderColor, textSize, 1.5)
-        if ob.info.combined
-            ob.orderBox.set_bgcolor(colorWithTransparency(orderColor, 1.1))
-        ob.orderBoxText := createOBBox(color.new(color.white, 100), textSize)
-        if showVolume or showPercentage
-            ob.orderBoxPositive := createOBBox(bullOrderBlockColor, textSize)
-            ob.orderBoxNegative := createOBBox(bearOrderBlockColor, textSize)
-            ob.orderSeperator := line.new(na,na,na,na,xloc.bar_time,extend.none,textColor,line.style_dashed,1)
-            ob.orderTextSeperator := line.new(na,na,na,na,xloc.bar_time,extend.none,textColor,line.style_solid,1)
+	if OBsEnabled and (not false or not (false and info.breaker)) and not (not showInvalidated and info.breaker)
+		textSize = getTextSize(textSizeOption)
+		ob.orderBox := createOBBox(orderColor, textSize, 1.5)
+		if ob.info.combined
+			ob.orderBox.set_bgcolor(colorWithTransparency(orderColor, 1.1))
+		ob.orderBoxText := createOBBox(color.new(color.white, 100), textSize)
+		if showVolume or showPercentage
+			ob.orderBoxPositive := createOBBox(bullOrderBlockColor, textSize)
+			ob.orderBoxNegative := createOBBox(bearOrderBlockColor, textSize)
+			ob.orderSeperator := line.new(na,na,na,na,xloc.bar_time,extend.none,textColor,line.style_dashed,1)
+			ob.orderTextSeperator := line.new(na,na,na,na,xloc.bar_time,extend.none,textColor,line.style_solid,1)
 
-        zoneSize = if obBoxLengthOption == "Range"
-            time - info.startTime 
-        else if obBoxLengthOption == "Extended Range"
-            time - info.startTime + adjustableLength * timeframe.in_seconds(timeframe.period)
-        else
-            extendZonesByTime
-        
-        startX = volumeBarsLeftSide ? info.startTime : info.startTime + zoneSize - zoneSize / 3
-        maxEndX = volumeBarsLeftSide ? info.startTime + zoneSize / 3 : info.startTime + zoneSize
+		zoneSize = if obBoxLengthOption == "Range"
+			time - info.startTime 
+		else if obBoxLengthOption == "Extended Range"
+			time - info.startTime + adjustableLength * timeframe.in_seconds(timeframe.period)
+		else
+			extendZonesByTime
+		
+		startX = volumeBarsLeftSide ? info.startTime : info.startTime + zoneSize - zoneSize / 3
+		maxEndX = volumeBarsLeftSide ? info.startTime + zoneSize / 3 : info.startTime + zoneSize
 
-        moveBox(ob.orderBox, info.startTime, info.top, info.startTime + zoneSize, info.bottom)
-        moveBox(ob.orderBoxText, volumeBarsLeftSide ? maxEndX : info.startTime, info.top, volumeBarsLeftSide ? info.startTime + zoneSize : startX, info.bottom)
+		moveBox(ob.orderBox, info.startTime, info.top, info.startTime + zoneSize, info.bottom)
+		moveBox(ob.orderBoxText, volumeBarsLeftSide ? maxEndX : info.startTime, info.top, volumeBarsLeftSide ? info.startTime + zoneSize : startX, info.bottom)
 
-        percentage = int((math.min(info.obHighVolume, info.obLowVolume) / math.max(info.obHighVolume, info.obLowVolume)) * 100.0)
-        OBText = (na(ob.info.combinedTimeframesStr) ? formatTimeframeString(ob.info.timeframeStr) : ob.info.combinedTimeframesStr) + " OB"
-        textToDisplay = ""
-        if showTimeframeOB
-            textToDisplay += OBText + " "
-        if showVolume
-            textToDisplay += str.tostring(ob.info.obVolume, format.volume) + " "
-        if showPercentage
-            textToDisplay += "(" + str.tostring(percentage) + "%)"
+		percentage = int((math.min(info.obHighVolume, info.obLowVolume) / math.max(info.obHighVolume, info.obLowVolume)) * 100.0)
+		OBText = (na(ob.info.combinedTimeframesStr) ? formatTimeframeString(ob.info.timeframeStr) : ob.info.combinedTimeframesStr) + " OB"
+		textToDisplay = ""
+		if showTimeframeOB
+			textToDisplay += OBText + " "
+		if showVolume
+			textToDisplay += str.tostring(ob.info.obVolume, format.volume) + " "
+		if showPercentage
+			textToDisplay += "(" + str.tostring(percentage) + "%)"
 
-        box.set_text(ob.orderBoxText, textToDisplay)
+		box.set_text(ob.orderBoxText, textToDisplay)
 
-        if showVolume or showPercentage
-            showHighLowBoxText = false
+		if showVolume or showPercentage
+			showHighLowBoxText = false
 
-            curEndXHigh = int(math.ceil((info.obHighVolume / info.obVolume) * (maxEndX - startX) + startX))
-            curEndXLow = int(math.ceil((info.obLowVolume / info.obVolume) * (maxEndX - startX) + startX))
+			curEndXHigh = int(math.ceil((info.obHighVolume / info.obVolume) * (maxEndX - startX) + startX))
+			curEndXLow = int(math.ceil((info.obLowVolume / info.obVolume) * (maxEndX - startX) + startX))
 
-            moveBox(ob.orderBoxPositive, mirrorVolumeBars ? startX : curEndXLow, info.top, mirrorVolumeBars ? curEndXHigh : maxEndX, (info.bottom + info.top) / 2)
-            box.set_text(ob.orderBoxPositive, showHighLowBoxText ? str.tostring(info.obHighVolume, format.volume) : "")
+			moveBox(ob.orderBoxPositive, mirrorVolumeBars ? startX : curEndXLow, info.top, mirrorVolumeBars ? curEndXHigh : maxEndX, (info.bottom + info.top) / 2)
+			box.set_text(ob.orderBoxPositive, showHighLowBoxText ? str.tostring(info.obHighVolume, format.volume) : "")
 
-            moveBox(ob.orderBoxNegative, mirrorVolumeBars ? startX : curEndXHigh, info.bottom, mirrorVolumeBars ? curEndXLow : maxEndX, (info.bottom + info.top) / 2)
-            box.set_text(ob.orderBoxNegative, showHighLowBoxText ? str.tostring(info.obLowVolume, format.volume) : "")
+			moveBox(ob.orderBoxNegative, mirrorVolumeBars ? startX : curEndXHigh, info.bottom, mirrorVolumeBars ? curEndXLow : maxEndX, (info.bottom + info.top) / 2)
+			box.set_text(ob.orderBoxNegative, showHighLowBoxText ? str.tostring(info.obLowVolume, format.volume) : "")
 
-            moveLine(ob.orderSeperator, volumeBarsLeftSide ? startX : maxEndX, (info.bottom + info.top) / 2, volumeBarsLeftSide ? maxEndX : startX)
+			moveLine(ob.orderSeperator, volumeBarsLeftSide ? startX : maxEndX, (info.bottom + info.top) / 2, volumeBarsLeftSide ? maxEndX : startX)
 
-            line.set_xy1(ob.orderTextSeperator, volumeBarsLeftSide ? maxEndX : startX, info.top)
-            line.set_xy2(ob.orderTextSeperator, volumeBarsLeftSide ? maxEndX : startX, info.bottom)
+			line.set_xy1(ob.orderTextSeperator, volumeBarsLeftSide ? maxEndX : startX, info.top)
+			line.set_xy2(ob.orderTextSeperator, volumeBarsLeftSide ? maxEndX : startX, info.bottom)
 
 findOBSwings(len) =>
-    var swingType = 0
-    var obSwing top = obSwing.new(na, na)
-    var obSwing bottom = obSwing.new(na, na)
-    
-    upper = ta.highest(len)
-    lower = ta.lowest(len)
+	var swingType = 0
+	var obSwing top = obSwing.new(na, na)
+	var obSwing bottom = obSwing.new(na, na)
+	
+	upper = ta.highest(len)
+	lower = ta.lowest(len)
 
-    swingType := high[len] > upper ? 0 : low[len] < lower ? 1 : swingType
+	swingType := high[len] > upper ? 0 : low[len] < lower ? 1 : swingType
 
-    if swingType == 0 and swingType[1] != 0
-        top := obSwing.new(bar_index[len], high[len], volume[len])
-    
-    if swingType == 1 and swingType[1] != 1
-        bottom := obSwing.new(bar_index[len], low[len], volume[len])
+	if swingType == 0 and swingType[1] != 0
+		top := obSwing.new(bar_index[len], high[len], volume[len])
+	
+	if swingType == 1 and swingType[1] != 1
+		bottom := obSwing.new(bar_index[len], low[len], volume[len])
 
-    [top, bottom]
+	[top, bottom]
 
 findOrderBlocks () =>
-    if bar_index > last_bar_index - maxDistanceToLastBar
-        [top, btm] = findOBSwings(swingLength)
-        useBody = false
-        max = useBody ? math.max(close, open) : high
-        min = useBody ? math.min(close, open) : low
+	if bar_index > last_bar_index - maxDistanceToLastBar
+		[top, btm] = findOBSwings(swingLength)
+		useBody = false
+		max = useBody ? math.max(close, open) : high
+		min = useBody ? math.min(close, open) : low
 
-        // Bullish Order Block
-        bullishBreaked = 0
+		// Bullish Order Block
+		bullishBreaked = 0
 
-        if array.size(bullishOrderBlocksList) > 0
-            for i = array.size(bullishOrderBlocksList) - 1 to 0
-                currentOB = array.get(bullishOrderBlocksList, i)
-            
-                if not na(currentOB) and not currentOB.breaker 
-                    if (obEndMethod == "Wick" ? low : math.min(open, close)) < currentOB.bottom
-                        currentOB.breaker := true
-                        currentOB.breakTime := time
-                        currentOB.bbVolume := volume
-                else
-                    if not na(currentOB) and high > currentOB.top
-                        array.remove(bullishOrderBlocksList, i)
-                    else if not na(currentOB) and i < bullishOrderBlocks and top.y < currentOB.top and top.y > currentOB.bottom 
-                        bullishBreaked := 1
+		if array.size(bullishOrderBlocksList) > 0
+			for i = array.size(bullishOrderBlocksList) - 1 to 0
+				currentOB = array.get(bullishOrderBlocksList, i)
+			
+				if not na(currentOB) and not currentOB.breaker 
+					if (obEndMethod == "Wick" ? low : math.min(open, close)) < currentOB.bottom
+						currentOB.breaker := true
+						currentOB.breakTime := time
+						currentOB.bbVolume := volume
+				else
+					if not na(currentOB) and high > currentOB.top
+						array.remove(bullishOrderBlocksList, i)
+					else if not na(currentOB) and i < bullishOrderBlocks and top.y < currentOB.top and top.y > currentOB.bottom 
+						bullishBreaked := 1
 
-        if close > top.y and not top.crossed
-            top.crossed := true
+		if close > top.y and not top.crossed
+			top.crossed := true
 
-            boxBtm = max[1]
-            boxTop = min[1]
-            boxLoc = time[1]
+			boxBtm = max[1]
+			boxTop = min[1]
+			boxLoc = time[1]
 
-            for i = 1 to (bar_index - top.x) - 1
-                boxBtm := math.min(min[i], boxBtm)
-                boxTop := boxBtm == min[i] ? max[i] : boxTop
-                boxLoc := boxBtm == min[i] ? time[i] : boxLoc
+			for i = 1 to (bar_index - top.x) - 1
+				boxBtm := math.min(min[i], boxBtm)
+				boxTop := boxBtm == min[i] ? max[i] : boxTop
+				boxLoc := boxBtm == min[i] ? time[i] : boxLoc
 
-            newOrderBlockInfo = orderBlockInfo.new(boxTop, boxBtm, volume + volume[1] + volume[2], "Bull", boxLoc)
-            newOrderBlockInfo.obLowVolume := volume[2]
-            newOrderBlockInfo.obHighVolume := volume + volume[1]
-            
-            obSize = math.abs(newOrderBlockInfo.top - newOrderBlockInfo.bottom)
-            if obSize <= atr * maxATRMult
-                array.unshift(bullishOrderBlocksList, newOrderBlockInfo)
-                if array.size(bullishOrderBlocksList) > maxOrderBlocks
-                    array.pop(bullishOrderBlocksList)
+			newOrderBlockInfo = orderBlockInfo.new(boxTop, boxBtm, volume + volume[1] + volume[2], "Bull", boxLoc)
+			newOrderBlockInfo.obLowVolume := volume[2]
+			newOrderBlockInfo.obHighVolume := volume + volume[1]
+			
+			obSize = math.abs(newOrderBlockInfo.top - newOrderBlockInfo.bottom)
+			if obSize <= atr * maxATRMult
+				array.unshift(bullishOrderBlocksList, newOrderBlockInfo)
+				if array.size(bullishOrderBlocksList) > maxOrderBlocks
+					array.pop(bullishOrderBlocksList)
 
-        // Bearish Order Block
-        bearishBreaked = 0
+		// Bearish Order Block
+		bearishBreaked = 0
 
-        if array.size(bearishOrderBlocksList) > 0
-            for i = array.size(bearishOrderBlocksList) - 1 to 0
-                currentOB = array.get(bearishOrderBlocksList, i)
+		if array.size(bearishOrderBlocksList) > 0
+			for i = array.size(bearishOrderBlocksList) - 1 to 0
+				currentOB = array.get(bearishOrderBlocksList, i)
 
-                if not na(currentOB) and not currentOB.breaker 
-                    if (obEndMethod == "Wick" ? high : math.max(open, close)) > currentOB.top
-                        currentOB.breaker := true
-                        currentOB.breakTime := time
-                        currentOB.bbVolume := volume
-                else
-                    if not na(currentOB) and low < currentOB.bottom
-                        array.remove(bearishOrderBlocksList, i)
-                    else if not na(currentOB) and i < bearishOrderBlocks and btm.y > currentOB.bottom and btm.y < currentOB.top 
-                        bearishBreaked := 1
+				if not na(currentOB) and not currentOB.breaker 
+					if (obEndMethod == "Wick" ? high : math.max(open, close)) > currentOB.top
+						currentOB.breaker := true
+						currentOB.breakTime := time
+						currentOB.bbVolume := volume
+				else
+					if not na(currentOB) and low < currentOB.bottom
+						array.remove(bearishOrderBlocksList, i)
+					else if not na(currentOB) and i < bearishOrderBlocks and btm.y > currentOB.bottom and btm.y < currentOB.top 
+						bearishBreaked := 1
 
-        if close < btm.y and not btm.crossed
-            btm.crossed := true
+		if close < btm.y and not btm.crossed
+			btm.crossed := true
 
-            boxBtm = min[1]
-            boxTop = max[1]
-            boxLoc = time[1]
+			boxBtm = min[1]
+			boxTop = max[1]
+			boxLoc = time[1]
 
-            for i = 1 to (bar_index - btm.x) - 1
-                boxTop := math.max(max[i], boxTop)
-                boxBtm := boxTop == max[i] ? min[i] : boxBtm
-                boxLoc := boxTop == max[i] ? time[i] : boxLoc
+			for i = 1 to (bar_index - btm.x) - 1
+				boxTop := math.max(max[i], boxTop)
+				boxBtm := boxTop == max[i] ? min[i] : boxBtm
+				boxLoc := boxTop == max[i] ? time[i] : boxLoc
 
-            newOrderBlockInfo = orderBlockInfo.new(boxTop, boxBtm, volume + volume[1] + volume[2], "Bear", boxLoc)
-            newOrderBlockInfo.obLowVolume := volume + volume[1]
-            newOrderBlockInfo.obHighVolume := volume[2]
+			newOrderBlockInfo = orderBlockInfo.new(boxTop, boxBtm, volume + volume[1] + volume[2], "Bear", boxLoc)
+			newOrderBlockInfo.obLowVolume := volume + volume[1]
+			newOrderBlockInfo.obHighVolume := volume[2]
 
-            obSize = math.abs(newOrderBlockInfo.top - newOrderBlockInfo.bottom)
-            if obSize <= atr * maxATRMult
-                array.unshift(bearishOrderBlocksList, newOrderBlockInfo)
-                if array.size(bearishOrderBlocksList) > maxOrderBlocks
-                    array.pop(bearishOrderBlocksList)
-    true
+			obSize = math.abs(newOrderBlockInfo.top - newOrderBlockInfo.bottom)
+			if obSize <= atr * maxATRMult
+				array.unshift(bearishOrderBlocksList, newOrderBlockInfo)
+				if array.size(bearishOrderBlocksList) > maxOrderBlocks
+					array.pop(bearishOrderBlocksList)
+	true
 
 areaOfOB (orderBlockInfo OBInfoF) =>
-    float XA1 = OBInfoF.startTime
-    float XA2 = na(OBInfoF.breakTime) ? time + 1 : OBInfoF.breakTime
-    float YA1 = OBInfoF.top
-    float YA2 = OBInfoF.bottom
-    float edge1 = math.sqrt((XA2 - XA1) * (XA2 - XA2) + (YA2 - YA2) * (YA2 - YA2))
-    float edge2 = math.sqrt((XA2 - XA2) * (XA2 - XA2) + (YA2 - YA1) * (YA2 - YA1))
-    float totalArea = edge1 * edge2
-    totalArea
+	float XA1 = OBInfoF.startTime
+	float XA2 = na(OBInfoF.breakTime) ? time + 1 : OBInfoF.breakTime
+	float YA1 = OBInfoF.top
+	float YA2 = OBInfoF.bottom
+	float edge1 = math.sqrt((XA2 - XA1) * (XA2 - XA2) + (YA2 - YA2) * (YA2 - YA2))
+	float edge2 = math.sqrt((XA2 - XA2) * (XA2 - XA2) + (YA2 - YA1) * (YA2 - YA1))
+	float totalArea = edge1 * edge2
+	totalArea
 
 doOBsTouch (orderBlockInfo OBInfo1, orderBlockInfo OBInfo2) =>
-    float XA1 = OBInfo1.startTime
-    float XA2 = na(OBInfo1.breakTime) ? time + 1 : OBInfo1.breakTime
-    float YA1 = OBInfo1.top
-    float YA2 = OBInfo1.bottom
+	float XA1 = OBInfo1.startTime
+	float XA2 = na(OBInfo1.breakTime) ? time + 1 : OBInfo1.breakTime
+	float YA1 = OBInfo1.top
+	float YA2 = OBInfo1.bottom
 
-    float XB1 = OBInfo2.startTime
-    float XB2 = na(OBInfo2.breakTime) ? time + 1 : OBInfo2.breakTime
-    float YB1 = OBInfo2.top
-    float YB2 = OBInfo2.bottom
-    float intersectionArea = math.max(0, math.min(XA2, XB2) - math.max(XA1, XB1)) * math.max(0, math.min(YA1, YB1) - math.max(YA2, YB2))
-    float unionArea = areaOfOB(OBInfo1) + areaOfOB(OBInfo2) - intersectionArea
-    
-    float overlapPercentage = (intersectionArea / unionArea) * 100.0
+	float XB1 = OBInfo2.startTime
+	float XB2 = na(OBInfo2.breakTime) ? time + 1 : OBInfo2.breakTime
+	float YB1 = OBInfo2.top
+	float YB2 = OBInfo2.bottom
+	float intersectionArea = math.max(0, math.min(XA2, XB2) - math.max(XA1, XB1)) * math.max(0, math.min(YA1, YB1) - math.max(YA2, YB2))
+	float unionArea = areaOfOB(OBInfo1) + areaOfOB(OBInfo2) - intersectionArea
+	
+	float overlapPercentage = (intersectionArea / unionArea) * 100.0
 
-    if overlapPercentage > overlapThresholdPercentage
-        true
-    else
-        false
+	if overlapPercentage > overlapThresholdPercentage
+		true
+	else
+		false
 
 isOBValid (orderBlockInfo OBInfo) =>
-    valid = true
-    if OBInfo.disabled
-        valid := false
-    valid
+	valid = true
+	if OBInfo.disabled
+		valid := false
+	valid
 
 combineOBsFunc () =>
-    if array.size(allOrderBlocksList) > 0
-        lastCombinations = 999
-        while lastCombinations > 0
-            lastCombinations := 0
-            for i = 0 to array.size(allOrderBlocksList) - 1
-                curOB1 = array.get(allOrderBlocksList, i)
-                for j = 0 to array.size(allOrderBlocksList) - 1
-                    curOB2 = array.get(allOrderBlocksList, j)
-                    if i == j
-                        continue
-                    if not isOBValid(curOB1.info) or not isOBValid(curOB2.info)
-                        continue
-                    if curOB1.info.obType != curOB2.info.obType
-                        continue
-                    if doOBsTouch(curOB1.info, curOB2.info)
-                        curOB1.info.disabled := true
-                        curOB2.info.disabled := true
-                        orderBlock newOB = createOrderBlock(orderBlockInfo.new(math.max(curOB1.info.top, curOB2.info.top), math.min(curOB1.info.bottom, curOB2.info.bottom), curOB1.info.obVolume + curOB2.info.obVolume, curOB1.info.obType))
-                        newOB.info.startTime := math.min(curOB1.info.startTime, curOB2.info.startTime)
-                        newOB.info.breakTime := math.max(nz(curOB1.info.breakTime), nz(curOB2.info.breakTime))
-                        newOB.info.breakTime := newOB.info.breakTime == 0 ? na : newOB.info.breakTime
-                        newOB.info.timeframeStr := curOB1.info.timeframeStr
+	if array.size(allOrderBlocksList) > 0
+		lastCombinations = 999
+		while lastCombinations > 0
+			lastCombinations := 0
+			for i = 0 to array.size(allOrderBlocksList) - 1
+				curOB1 = array.get(allOrderBlocksList, i)
+				for j = 0 to array.size(allOrderBlocksList) - 1
+					curOB2 = array.get(allOrderBlocksList, j)
+					if i == j
+						continue
+					if not isOBValid(curOB1.info) or not isOBValid(curOB2.info)
+						continue
+					if curOB1.info.obType != curOB2.info.obType
+						continue
+					if doOBsTouch(curOB1.info, curOB2.info)
+						curOB1.info.disabled := true
+						curOB2.info.disabled := true
+						orderBlock newOB = createOrderBlock(orderBlockInfo.new(math.max(curOB1.info.top, curOB2.info.top), math.min(curOB1.info.bottom, curOB2.info.bottom), curOB1.info.obVolume + curOB2.info.obVolume, curOB1.info.obType))
+						newOB.info.startTime := math.min(curOB1.info.startTime, curOB2.info.startTime)
+						newOB.info.breakTime := math.max(nz(curOB1.info.breakTime), nz(curOB2.info.breakTime))
+						newOB.info.breakTime := newOB.info.breakTime == 0 ? na : newOB.info.breakTime
+						newOB.info.timeframeStr := curOB1.info.timeframeStr
 
-                        newOB.info.obVolume := curOB1.info.obVolume + curOB2.info.obVolume
-                        newOB.info.obLowVolume := curOB1.info.obLowVolume + curOB2.info.obLowVolume
-                        newOB.info.obHighVolume := curOB1.info.obHighVolume + curOB2.info.obHighVolume
-                        newOB.info.bbVolume := nz(curOB1.info.bbVolume, 0) + nz(curOB2.info.bbVolume, 0)
-                        newOB.info.breaker := curOB1.info.breaker or curOB2.info.breaker
-                        
-                        newOB.info.combined := true
-                        if timeframe.in_seconds(curOB1.info.timeframeStr) != timeframe.in_seconds(curOB2.info.timeframeStr)
-                            newOB.info.combinedTimeframesStr := (na(curOB1.info.combinedTimeframesStr) ? formatTimeframeString(curOB1.info.timeframeStr) : curOB1.info.combinedTimeframesStr) + " & " + (na(curOB2.info.combinedTimeframesStr) ? formatTimeframeString(curOB2.info.timeframeStr) : curOB2.info.combinedTimeframesStr)
-                        array.unshift(allOrderBlocksList, newOB)
-                        lastCombinations += 1
+						newOB.info.obVolume := curOB1.info.obVolume + curOB2.info.obVolume
+						newOB.info.obLowVolume := curOB1.info.obLowVolume + curOB2.info.obLowVolume
+						newOB.info.obHighVolume := curOB1.info.obHighVolume + curOB2.info.obHighVolume
+						newOB.info.bbVolume := nz(curOB1.info.bbVolume, 0) + nz(curOB2.info.bbVolume, 0)
+						newOB.info.breaker := curOB1.info.breaker or curOB2.info.breaker
+						
+						newOB.info.combined := true
+						if timeframe.in_seconds(curOB1.info.timeframeStr) != timeframe.in_seconds(curOB2.info.timeframeStr)
+							newOB.info.combinedTimeframesStr := (na(curOB1.info.combinedTimeframesStr) ? formatTimeframeString(curOB1.info.timeframeStr) : curOB1.info.combinedTimeframesStr) + " & " + (na(curOB2.info.combinedTimeframesStr) ? formatTimeframeString(curOB2.info.timeframeStr) : curOB2.info.combinedTimeframesStr)
+						array.unshift(allOrderBlocksList, newOB)
+						lastCombinations += 1
 
 reqSeq (timeframeStr) =>
-    [bullishOrderBlocksListF, bearishOrderBlocksListF] = request.security(syminfo.tickerid, timeframeStr, [bullishOrderBlocksList, bearishOrderBlocksList])
-    [bullishOrderBlocksListF, bearishOrderBlocksListF]
+	[bullishOrderBlocksListF, bearishOrderBlocksListF] = request.security(syminfo.tickerid, timeframeStr, [bullishOrderBlocksList, bearishOrderBlocksList])
+	[bullishOrderBlocksListF, bearishOrderBlocksListF]
 
 getTFData (timeframeInfo timeframeInfoF, timeframeStr) =>
-    if timeframeInfoF.isEnabled
-        [bullishOrderBlocksListF, bearishOrderBlocksListF] = reqSeq(timeframeStr)
-        if na(bullishOrderBlocksListF) or na(bearishOrderBlocksListF)
-            [array.new<orderBlockInfo>(0), array.new<orderBlockInfo>(0)]
-        else
-            [bullishOrderBlocksListF, bearishOrderBlocksListF]
-    else
-        [array.new<orderBlockInfo>(0), array.new<orderBlockInfo>(0)]
+	if timeframeInfoF.isEnabled
+		[bullishOrderBlocksListF, bearishOrderBlocksListF] = reqSeq(timeframeStr)
+		if na(bullishOrderBlocksListF) or na(bearishOrderBlocksListF)
+			[array.new<orderBlockInfo>(0), array.new<orderBlockInfo>(0)]
+		else
+			[bullishOrderBlocksListF, bearishOrderBlocksListF]
+	else
+		[array.new<orderBlockInfo>(0), array.new<orderBlockInfo>(0)]
 
 handleTimeframeInfo (timeframeInfo timeframeInfoF, bullishOrderBlocksListF, bearishOrderBlocksListF) =>
-    if timeframeInfoF.isEnabled
-        if not na(bullishOrderBlocksListF)
-            timeframeInfoF.bullishOrderBlocksList := bullishOrderBlocksListF
-        else
-            timeframeInfoF.bullishOrderBlocksList := array.new<orderBlockInfo>(0)
-        if not na(bearishOrderBlocksListF)
-            timeframeInfoF.bearishOrderBlocksList := bearishOrderBlocksListF
-        else
-            timeframeInfoF.bearishOrderBlocksList := array.new<orderBlockInfo>(0)
+	if timeframeInfoF.isEnabled
+		if not na(bullishOrderBlocksListF)
+			timeframeInfoF.bullishOrderBlocksList := bullishOrderBlocksListF
+		else
+			timeframeInfoF.bullishOrderBlocksList := array.new<orderBlockInfo>(0)
+		if not na(bearishOrderBlocksListF)
+			timeframeInfoF.bearishOrderBlocksList := bearishOrderBlocksListF
+		else
+			timeframeInfoF.bearishOrderBlocksList := array.new<orderBlockInfo>(0)
 
 handleOrderBlocksFinal () =>
-    if DEBUG
-        log.info("Bullish OB Count " + str.tostring(array.size(bullishOrderBlocksList)))
-        log.info("Bearish OB Count " + str.tostring(array.size(bearishOrderBlocksList)))
+	if DEBUG
+		log.info("Bullish OB Count " + str.tostring(array.size(bullishOrderBlocksList)))
+		log.info("Bearish OB Count " + str.tostring(array.size(bearishOrderBlocksList)))
 
-    if array.size(allOrderBlocksList) > 0
-        for i = 0 to array.size(allOrderBlocksList) - 1
-            safeDeleteOrderBlock(array.get(allOrderBlocksList, i))
-    array.clear(allOrderBlocksList)    
+	if array.size(allOrderBlocksList) > 0
+		for i = 0 to array.size(allOrderBlocksList) - 1
+			safeDeleteOrderBlock(array.get(allOrderBlocksList, i))
+	array.clear(allOrderBlocksList)    
 
-    for i = 0 to array.size(timeframeInfos) - 1
-        curTimeframe = array.get(timeframeInfos, i)
-        if not curTimeframe.isEnabled
-            continue
-        if not na(curTimeframe.bullishOrderBlocksList) and array.size(curTimeframe.bullishOrderBlocksList) > 0
-            for j = 0 to math.min(array.size(curTimeframe.bullishOrderBlocksList) - 1, bullishOrderBlocks - 1)
-                orderBlockInfoF = array.get(curTimeframe.bullishOrderBlocksList, j)
-                orderBlockInfoF.timeframeStr := curTimeframe.timeframeStr
-                array.unshift(allOrderBlocksList, createOrderBlock(orderBlockInfo.copy(orderBlockInfoF)))
+	for i = 0 to array.size(timeframeInfos) - 1
+		curTimeframe = array.get(timeframeInfos, i)
+		if not curTimeframe.isEnabled
+			continue
+		if not na(curTimeframe.bullishOrderBlocksList) and array.size(curTimeframe.bullishOrderBlocksList) > 0
+			for j = 0 to math.min(array.size(curTimeframe.bullishOrderBlocksList) - 1, bullishOrderBlocks - 1)
+				orderBlockInfoF = array.get(curTimeframe.bullishOrderBlocksList, j)
+				orderBlockInfoF.timeframeStr := curTimeframe.timeframeStr
+				array.unshift(allOrderBlocksList, createOrderBlock(orderBlockInfo.copy(orderBlockInfoF)))
 
-        if not na(curTimeframe.bearishOrderBlocksList) and array.size(curTimeframe.bearishOrderBlocksList) > 0
-            for j = 0 to math.min(array.size(curTimeframe.bearishOrderBlocksList) - 1, bearishOrderBlocks - 1)
-                orderBlockInfoF = array.get(curTimeframe.bearishOrderBlocksList, j)
-                orderBlockInfoF.timeframeStr := curTimeframe.timeframeStr
-                array.unshift(allOrderBlocksList, createOrderBlock(orderBlockInfo.copy(orderBlockInfoF)))
+		if not na(curTimeframe.bearishOrderBlocksList) and array.size(curTimeframe.bearishOrderBlocksList) > 0
+			for j = 0 to math.min(array.size(curTimeframe.bearishOrderBlocksList) - 1, bearishOrderBlocks - 1)
+				orderBlockInfoF = array.get(curTimeframe.bearishOrderBlocksList, j)
+				orderBlockInfoF.timeframeStr := curTimeframe.timeframeStr
+				array.unshift(allOrderBlocksList, createOrderBlock(orderBlockInfo.copy(orderBlockInfoF)))
 
-    if combineOBs
-        combineOBsFunc()    
+	if combineOBs
+		combineOBsFunc()    
 
-    if array.size(allOrderBlocksList) > 0
-        for i = 0 to array.size(allOrderBlocksList) - 1
-            curOB = array.get(allOrderBlocksList, i)
-            if isOBValid(curOB.info)
-                renderOrderBlock(curOB)
+	if array.size(allOrderBlocksList) > 0
+		for i = 0 to array.size(allOrderBlocksList) - 1
+			curOB = array.get(allOrderBlocksList, i)
+			if isOBValid(curOB.info)
+				renderOrderBlock(curOB)
 
 findOrderBlocks()
 
@@ -726,28 +680,26 @@ findOrderBlocks()
 [bullishOrderBlocksListTimeframe2, bearishOrderBlocksListTimeframe2] = getTFData(array.get(timeframeInfos, 1), timeframe2)
 
 if barstate.isconfirmed
-    handleTimeframeInfo(array.get(timeframeInfos, 0), bullishOrderBlocksListTimeframe1, bearishOrderBlocksListTimeframe1)
-    handleTimeframeInfo(array.get(timeframeInfos, 1), bullishOrderBlocksListTimeframe2, bearishOrderBlocksListTimeframe2)
-    handleOrderBlocksFinal()
+	handleTimeframeInfo(array.get(timeframeInfos, 0), bullishOrderBlocksListTimeframe1, bearishOrderBlocksListTimeframe1)
+	handleTimeframeInfo(array.get(timeframeInfos, 1), bullishOrderBlocksListTimeframe2, bearishOrderBlocksListTimeframe2)
+	handleOrderBlocksFinal()
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//------------------------------------------------------------------------------------------------------------------------------------------------------//
-//---------------------------------------------------------------      FAIR VALUE GAPS CALCULATIONS & FUNCTIONS     ------------------------------------//
-//------------------------------------------------------------------------------------------------------------------------------------------------------//
+//// ───────────────────────
+/// ─── FAIR VALUE GAPS CALCULATIONS & FUNCTIONS
+//// ───────────────────────
 lineStyle(x) =>
-    switch x
-        'Solid' => line.style_solid
-        'Dashed' => line.style_dashed
-        'Dotted' => line.style_dotted
+	switch x
+		'Solid' => line.style_solid
+		'Dashed' => line.style_dashed
+		'Dotted' => line.style_dotted
 // FAIR VALUE GAPS FUNCTION //
 var htfH = open
 var htfL = open
 
 if close > htfH 
-    htfH:= close
+	htfH:= close
 if close < htfL
-    htfL := close
+	htfL := close
 
 sClose  = request.security(ticker.standard(syminfo.tickerid), i_tf, close[1], barmerge.gaps_off, barmerge.lookahead_on)
 sHighP2 = request.security(ticker.standard(syminfo.tickerid), i_tf, high[2], barmerge.gaps_off, barmerge.lookahead_on)
@@ -773,328 +725,327 @@ fvg_apper:=false
 fvg_break:=false
 
 create_fvg_func(_upperlimit,_lowerlimit,_midlimit,_bar,_boxholder,_boxholder_fill,_midholder,_highholder,_lowholder,_labelholder,_boxcolor,_mtfboxcolor, _htf)=>
-    timeholder = str.tostring(i_tf)
-    offset = i_mtfos
-    boxbgcolor = _mtfboxcolor
-    bg_color = color.new(_mtfboxcolor,90)
-    if _htf == false
-        timeholder := str.tostring(timeframe.period)
-        offset := i_tfos
-        boxbgcolor := _boxcolor
-    array.push(_boxholder,box.new(_bar,_upperlimit,_bar+(timediff)*length_extend,_lowerlimit,border_color=fvg_color_fill? bg_color : na,bgcolor = fvg_color_fill? bg_color : na, extend = fvg_extend ? extend.right:extend.none,xloc = xloc.bar_time,text='',text_color=#787b86,text_halign=text.align_right,text_size=size.small))
-    array.push(_boxholder_fill,box.new(_bar,_upperlimit,_bar+(timediff)*length_extend,_lowerlimit,border_color=fvg_color_fill? bg_color : na ,bgcolor = fvg_color_fill? bg_color : na, extend = fvg_extend ? extend.right:extend.none,xloc = xloc.bar_time))
-    array.push(_midholder,line.new(_bar,(_lowerlimit+_upperlimit)/2.0,_bar+(timediff)*length_extend,_midlimit,color = i_midPointColor, extend = fvg_extend ? extend.right:extend.none,style=lineStyle(mid_style),width=1,xloc = xloc.bar_time))
-    array.push(_lowholder,line.new(_bar,_lowerlimit,_bar+(timediff)*length_extend,_lowerlimit,color = i_fillByMid?boxbgcolor:na, extend = fvg_extend ? extend.right:extend.none,width=1,xloc = xloc.bar_time))
-    array.push(_highholder,line.new(_bar,_upperlimit,_bar+(timediff)*length_extend,_upperlimit,color = i_fillByMid?boxbgcolor:na, extend = fvg_extend ? extend.right:extend.none,width=1,xloc = xloc.bar_time))
+	timeholder = str.tostring(i_tf)
+	offset = i_mtfos
+	boxbgcolor = _mtfboxcolor
+	bg_color = color.new(_mtfboxcolor,90)
+	if _htf == false
+		timeholder := str.tostring(timeframe.period)
+		offset := i_tfos
+		boxbgcolor := _boxcolor
+	array.push(_boxholder,box.new(_bar,_upperlimit,_bar+(timediff)*length_extend,_lowerlimit,border_color=fvg_color_fill? bg_color : na,bgcolor = fvg_color_fill? bg_color : na, extend = fvg_extend ? extend.right:extend.none,xloc = xloc.bar_time,text='',text_color=#787b86,text_halign=text.align_right,text_size=size.small))
+	array.push(_boxholder_fill,box.new(_bar,_upperlimit,_bar+(timediff)*length_extend,_lowerlimit,border_color=fvg_color_fill? bg_color : na ,bgcolor = fvg_color_fill? bg_color : na, extend = fvg_extend ? extend.right:extend.none,xloc = xloc.bar_time))
+	array.push(_midholder,line.new(_bar,(_lowerlimit+_upperlimit)/2.0,_bar+(timediff)*length_extend,_midlimit,color = i_midPointColor, extend = fvg_extend ? extend.right:extend.none,style=lineStyle(mid_style),width=1,xloc = xloc.bar_time))
+	array.push(_lowholder,line.new(_bar,_lowerlimit,_bar+(timediff)*length_extend,_lowerlimit,color = i_fillByMid?boxbgcolor:na, extend = fvg_extend ? extend.right:extend.none,width=1,xloc = xloc.bar_time))
+	array.push(_highholder,line.new(_bar,_upperlimit,_bar+(timediff)*length_extend,_upperlimit,color = i_fillByMid?boxbgcolor:na, extend = fvg_extend ? extend.right:extend.none,width=1,xloc = xloc.bar_time))
 
 //checks for gap //
 check_fvg_func(_close,_high,_highp2,_low,_lowp2,_open,_bar,_htf)=>
-    gap=0
-    thold_ = (ta.highest(_high,300) - ta.lowest(_low,300)) * math.max(max_width_fvg, 0.1) / 100.
-    if _open > _close // red
+	gap=0
+	thold_ = (ta.highest(_high,300) - ta.lowest(_low,300)) * math.max(max_width_fvg, 0.1) / 100.
+	if _open > _close // red
 
-        if _lowp2>_high
-            if not(remove_small) or math.abs(_lowp2 -_high) > thold_
-                upperlimit = _high
-                lowerlimit = _lowp2
-                midlimit = lowerlimit + ((upperlimit - lowerlimit) / 2.)
-                gap:=1
-                create_fvg_func(upperlimit,lowerlimit,midlimit,_bar,bullishgapholder,bullishgapholder_fill,bullishmidholder,bullish_high_holder,bullish_low_holder,bullishlabelholder,i_bullishfvgcolor,i_mtfbullishfvgcolor,_htf)
-            
-    else
-        
-        if _low>_highp2
-            if not(remove_small) or math.abs(_low - _highp2) > thold_
-                upperlimit = _low
-                lowerlimit = _highp2
-                midlimit = lowerlimit + ((upperlimit - lowerlimit) / 2.)
-                gap:=-1
-                create_fvg_func(upperlimit,lowerlimit,midlimit,_bar,bearishgapholder,bearishgapholder_fill,bearishmidholder,bearish_high_holder,bearish_low_holder,bearishlabelholder,i_bearishfvgcolor,i_mtfbearishfvgcolor,_htf)
-            
-    gap
+		if _lowp2>_high
+			if not(remove_small) or math.abs(_lowp2 -_high) > thold_
+				upperlimit = _high
+				lowerlimit = _lowp2
+				midlimit = lowerlimit + ((upperlimit - lowerlimit) / 2.)
+				gap:=1
+				create_fvg_func(upperlimit,lowerlimit,midlimit,_bar,bullishgapholder,bullishgapholder_fill,bullishmidholder,bullish_high_holder,bullish_low_holder,bullishlabelholder,i_bullishfvgcolor,i_mtfbullishfvgcolor,_htf)
+			
+	else
+		
+		if _low>_highp2
+			if not(remove_small) or math.abs(_low - _highp2) > thold_
+				upperlimit = _low
+				lowerlimit = _highp2
+				midlimit = lowerlimit + ((upperlimit - lowerlimit) / 2.)
+				gap:=-1
+				create_fvg_func(upperlimit,lowerlimit,midlimit,_bar,bearishgapholder,bearishgapholder_fill,bearishmidholder,bearish_high_holder,bearish_low_holder,bearishlabelholder,i_bearishfvgcolor,i_mtfbearishfvgcolor,_htf)
+			
+	gap
 
 // MITIGATION FAIR VALUE GAPS //
 delete_fvg_func(_currentgap,_currentgap_fill,_i,_boxholder,_boxholder_fill,_midholder,_highholder,_lowholder,_labelholder)=>
    
-    array.remove(_boxholder,_i)
-    array.remove(_boxholder_fill,_i)
-    currentmid=array.get(_midholder,_i)
-    currenthigh=array.get(_highholder,_i)
-    currentlow=array.get(_lowholder,_i)
-    array.remove(_midholder,_i)
-    array.remove(_highholder,_i)
-    array.remove(_lowholder,_i)
-    
-    if i_deleteonfill
-        line.delete(currentmid)
-        line.delete(currenthigh)
-        line.delete(currentlow)
-    else
-        line.set_extend(currentmid, extend.none)
-        line.set_x2(currentmid,time)
-        line.set_extend(currenthigh, extend.none)
-        line.set_x2(currenthigh,time)
-        line.set_extend(currentlow, extend.none)
-        line.set_x2(currentlow,time)
+	array.remove(_boxholder,_i)
+	array.remove(_boxholder_fill,_i)
+	currentmid=array.get(_midholder,_i)
+	currenthigh=array.get(_highholder,_i)
+	currentlow=array.get(_lowholder,_i)
+	array.remove(_midholder,_i)
+	array.remove(_highholder,_i)
+	array.remove(_lowholder,_i)
+	
+	if i_deleteonfill
+		line.delete(currentmid)
+		line.delete(currenthigh)
+		line.delete(currentlow)
+	else
+		line.set_extend(currentmid, extend.none)
+		line.set_x2(currentmid,time)
+		line.set_extend(currenthigh, extend.none)
+		line.set_x2(currenthigh,time)
+		line.set_extend(currentlow, extend.none)
+		line.set_x2(currentlow,time)
 
-    if i_deleteonfill
-        box.delete(_currentgap)
-        box.delete(_currentgap_fill)
-                
-    else
-        box.set_extend(_currentgap,extend.none)
-        box.set_right(_currentgap,time)
+	if i_deleteonfill
+		box.delete(_currentgap)
+		box.delete(_currentgap_fill)
+				
+	else
+		box.set_extend(_currentgap,extend.none)
+		box.set_right(_currentgap,time)
 
 // CHECKS FILLED FAIR VALUE GAPS //
 validate_fvg_func(_high,_low)=>
 
-    fvg_removed=0
-    if array.size(bullishgapholder) > 0
+	fvg_removed=0
+	if array.size(bullishgapholder) > 0
 
-        for i = array.size(bullishgapholder)-1 to 0
-            if fvg_extend_B
-                currentgap_fill = array.get(bullishgapholder_fill,i)
-                currentgap = array.get(bullishgapholder,i)
-                cmid = array.get(bullishmidholder,i)
-                chigh = array.get(bullish_high_holder,i)
-                clow = array.get(bullish_low_holder,i)
-                line.set_x2(cmid,timenow+(timediff)*length_extend)
-                line.set_x2(chigh,timenow+(timediff)*length_extend)
-                line.set_x2(clow,timenow+(timediff)*length_extend)
-                box.set_right(currentgap_fill,timenow+(timediff)*length_extend)
-                box.set_right(currentgap,timenow+(timediff)*length_extend)
+		for i = array.size(bullishgapholder)-1 to 0
+			if fvg_extend_B
+				currentgap_fill = array.get(bullishgapholder_fill,i)
+				currentgap = array.get(bullishgapholder,i)
+				cmid = array.get(bullishmidholder,i)
+				chigh = array.get(bullish_high_holder,i)
+				clow = array.get(bullish_low_holder,i)
+				line.set_x2(cmid,timenow+(timediff)*length_extend)
+				line.set_x2(chigh,timenow+(timediff)*length_extend)
+				line.set_x2(clow,timenow+(timediff)*length_extend)
+				box.set_right(currentgap_fill,timenow+(timediff)*length_extend)
+				box.set_right(currentgap,timenow+(timediff)*length_extend)
 
-            if mittigation_filt_fvg=='Touch'
-                currentgap_fill = array.get(bullishgapholder_fill,i)
-                currentgap = array.get(bullishgapholder,i)
-                currentmid = array.get(bullishmidholder,i)
-                currenthigh = array.get(bullish_high_holder,i)
-                currentlow = array.get(bullish_low_holder,i)
-                currenttop = box.get_top(currentgap)
+			if mittigation_filt_fvg=='Touch'
+				currentgap_fill = array.get(bullishgapholder_fill,i)
+				currentgap = array.get(bullishgapholder,i)
+				currentmid = array.get(bullishmidholder,i)
+				currenthigh = array.get(bullish_high_holder,i)
+				currentlow = array.get(bullish_low_holder,i)
+				currenttop = box.get_top(currentgap)
 
-                if high > currenttop
-                    fvg_removed:=1
-                    delete_fvg_func(currentgap,currentgap_fill,i,bullishgapholder,bullishgapholder_fill,bullishmidholder,bullish_high_holder,bullish_low_holder,bullishlabelholder)
-            
-            if mittigation_filt_fvg=='Wicks'
-                currentgap_fill = array.get(bullishgapholder_fill,i)
-                currentgap = array.get(bullishgapholder,i)
-                currentmid = array.get(bullishmidholder,i)
-                currenthigh = array.get(bullish_high_holder,i)
-                currentlow = array.get(bullish_low_holder,i)
-                currenttop = box.get_bottom(currentgap)
-                currentbottom = box.get_top(currentgap_fill)
+				if high > currenttop
+					fvg_removed:=1
+					delete_fvg_func(currentgap,currentgap_fill,i,bullishgapholder,bullishgapholder_fill,bullishmidholder,bullish_high_holder,bullish_low_holder,bullishlabelholder)
+			
+			if mittigation_filt_fvg=='Wicks'
+				currentgap_fill = array.get(bullishgapholder_fill,i)
+				currentgap = array.get(bullishgapholder,i)
+				currentmid = array.get(bullishmidholder,i)
+				currenthigh = array.get(bullish_high_holder,i)
+				currentlow = array.get(bullish_low_holder,i)
+				currenttop = box.get_bottom(currentgap)
+				currentbottom = box.get_top(currentgap_fill)
 
-                if high > currentbottom and fvg_shade_fill
-                    currentgap_f = array.get(bullishgapholder_fill,i)
-                    cur_bottom=box.get_bottom(currentgap_f)
-                    _bottom=box.get_bottom(currentgap)
-                    if _bottom==cur_bottom
-                        box.set_bottom(currentgap_f,high)
-                    else
-                        box.set_bottom(currentgap_f,math.max(cur_bottom,high))
-                    box.set_bgcolor(currentgap_f,#787b865e)
-                    
-                if high > currenttop
-                    fvg_removed:=1
-                    delete_fvg_func(currentgap,currentgap_fill,i,bullishgapholder,bullishgapholder_fill,bullishmidholder,bullish_high_holder,bullish_low_holder,bullishlabelholder)
-            
-            if mittigation_filt_fvg=='Close'
-                currentgap_fill = array.get(bullishgapholder_fill,i)
-                currentgap = array.get(bullishgapholder,i)
-                currentmid = array.get(bullishmidholder,i)
-                currenthigh = array.get(bullish_high_holder,i)
-                currentlow = array.get(bullish_low_holder,i)
-                currenttop = box.get_bottom(currentgap)
-                currentbottom = box.get_top(currentgap_fill)
+				if high > currentbottom and fvg_shade_fill
+					currentgap_f = array.get(bullishgapholder_fill,i)
+					cur_bottom=box.get_bottom(currentgap_f)
+					_bottom=box.get_bottom(currentgap)
+					if _bottom==cur_bottom
+						box.set_bottom(currentgap_f,high)
+					else
+						box.set_bottom(currentgap_f,math.max(cur_bottom,high))
+					box.set_bgcolor(currentgap_f,#787b865e)
+					
+				if high > currenttop
+					fvg_removed:=1
+					delete_fvg_func(currentgap,currentgap_fill,i,bullishgapholder,bullishgapholder_fill,bullishmidholder,bullish_high_holder,bullish_low_holder,bullishlabelholder)
+			
+			if mittigation_filt_fvg=='Close'
+				currentgap_fill = array.get(bullishgapholder_fill,i)
+				currentgap = array.get(bullishgapholder,i)
+				currentmid = array.get(bullishmidholder,i)
+				currenthigh = array.get(bullish_high_holder,i)
+				currentlow = array.get(bullish_low_holder,i)
+				currenttop = box.get_bottom(currentgap)
+				currentbottom = box.get_top(currentgap_fill)
 
-                if high > currentbottom and fvg_shade_fill
-                    currentgap_f = array.get(bullishgapholder_fill,i)
-                    cur_bottom=box.get_bottom(currentgap_f)
-                    _bottom=box.get_bottom(currentgap)
-                    if _bottom==cur_bottom
-                        box.set_bottom(currentgap_f,high)
-                    else
-                        box.set_bottom(currentgap_f,math.max(cur_bottom,high))
-                    box.set_bgcolor(currentgap_f,#787b865e)
-                if close > currenttop
-                    fvg_removed:=1
-                    delete_fvg_func(currentgap,currentgap_fill,i,bullishgapholder,bullishgapholder_fill,bullishmidholder,bullish_high_holder,bullish_low_holder,bullishlabelholder)
+				if high > currentbottom and fvg_shade_fill
+					currentgap_f = array.get(bullishgapholder_fill,i)
+					cur_bottom=box.get_bottom(currentgap_f)
+					_bottom=box.get_bottom(currentgap)
+					if _bottom==cur_bottom
+						box.set_bottom(currentgap_f,high)
+					else
+						box.set_bottom(currentgap_f,math.max(cur_bottom,high))
+					box.set_bgcolor(currentgap_f,#787b865e)
+				if close > currenttop
+					fvg_removed:=1
+					delete_fvg_func(currentgap,currentgap_fill,i,bullishgapholder,bullishgapholder_fill,bullishmidholder,bullish_high_holder,bullish_low_holder,bullishlabelholder)
 
-            if mittigation_filt_fvg=='Average'
-                currentgap_fill = array.get(bullishgapholder_fill,i)
-                currentgap = array.get(bullishgapholder,i)
-                currentmid = array.get(bullishmidholder,i)
-                currenthigh = array.get(bullish_high_holder,i)
-                currentlow = array.get(bullish_low_holder,i)
-                currenttop = line.get_y1(currentmid)
-                currentbottom = box.get_top(currentgap_fill)
+			if mittigation_filt_fvg=='Average'
+				currentgap_fill = array.get(bullishgapholder_fill,i)
+				currentgap = array.get(bullishgapholder,i)
+				currentmid = array.get(bullishmidholder,i)
+				currenthigh = array.get(bullish_high_holder,i)
+				currentlow = array.get(bullish_low_holder,i)
+				currenttop = line.get_y1(currentmid)
+				currentbottom = box.get_top(currentgap_fill)
 
-                if high > currentbottom and fvg_shade_fill
-                    currentgap_f = array.get(bullishgapholder_fill,i)
-                    cur_bottom=box.get_bottom(currentgap_f)
-                    _bottom=box.get_bottom(currentgap)
-                    if _bottom==cur_bottom
-                        box.set_bottom(currentgap_f,high)
-                    else
-                        box.set_bottom(currentgap_f,math.max(cur_bottom,high))
-                    box.set_bgcolor(currentgap_f,#787b865e)
+				if high > currentbottom and fvg_shade_fill
+					currentgap_f = array.get(bullishgapholder_fill,i)
+					cur_bottom=box.get_bottom(currentgap_f)
+					_bottom=box.get_bottom(currentgap)
+					if _bottom==cur_bottom
+						box.set_bottom(currentgap_f,high)
+					else
+						box.set_bottom(currentgap_f,math.max(cur_bottom,high))
+					box.set_bgcolor(currentgap_f,#787b865e)
 
-                if high > currenttop
-                    fvg_removed:=1
-                    delete_fvg_func(currentgap,currentgap_fill,i,bullishgapholder,bullishgapholder_fill,bullishmidholder,bullish_high_holder,bullish_low_holder,bullishlabelholder)
+				if high > currenttop
+					fvg_removed:=1
+					delete_fvg_func(currentgap,currentgap_fill,i,bullishgapholder,bullishgapholder_fill,bullishmidholder,bullish_high_holder,bullish_low_holder,bullishlabelholder)
 
-    if array.size(bearishgapholder) > 0
-            
-        for i = array.size(bearishgapholder)-1 to 0
-            if fvg_extend_B
-                currentgap_fill = array.get(bearishgapholder_fill,i)
-                currentgap = array.get(bearishgapholder,i)
-                cmid = array.get(bearishmidholder,i)
-                chigh = array.get(bearish_high_holder,i)
-                clow = array.get(bearish_low_holder,i)
-                line.set_x2(cmid,timenow+(timediff)*length_extend)
-                line.set_x2(chigh,timenow+(timediff)*length_extend)
-                line.set_x2(clow,timenow+(timediff)*length_extend)
-                box.set_right(currentgap_fill,timenow+(timediff)*length_extend)
-                box.set_right(currentgap,timenow+(timediff)*length_extend)
+	if array.size(bearishgapholder) > 0
+			
+		for i = array.size(bearishgapholder)-1 to 0
+			if fvg_extend_B
+				currentgap_fill = array.get(bearishgapholder_fill,i)
+				currentgap = array.get(bearishgapholder,i)
+				cmid = array.get(bearishmidholder,i)
+				chigh = array.get(bearish_high_holder,i)
+				clow = array.get(bearish_low_holder,i)
+				line.set_x2(cmid,timenow+(timediff)*length_extend)
+				line.set_x2(chigh,timenow+(timediff)*length_extend)
+				line.set_x2(clow,timenow+(timediff)*length_extend)
+				box.set_right(currentgap_fill,timenow+(timediff)*length_extend)
+				box.set_right(currentgap,timenow+(timediff)*length_extend)
 
-            if mittigation_filt_fvg=='Touch'
-                currentgap_fill = array.get(bearishgapholder_fill,i)
-                currentgap = array.get(bearishgapholder,i)
-                currenttop = box.get_top(currentgap)
-                currentmid = array.get(bearishmidholder,i)
-                currenthigh = array.get(bearish_high_holder,i)
-                currentlow = array.get(bearish_low_holder,i)
-    
-                if low < currenttop
-                    fvg_removed:=-1
-                    delete_fvg_func(currentgap,currentgap_fill,i,bearishgapholder,bearishgapholder_fill,bearishmidholder,bearish_high_holder,bearish_low_holder,bearishlabelholder)
-            if mittigation_filt_fvg=='Wicks'
-                currentgap_fill = array.get(bearishgapholder_fill,i)
-                currentgap = array.get(bearishgapholder,i)
-                currenttop = box.get_bottom(currentgap)
-                currentmid = array.get(bearishmidholder,i)
-                currenthigh = array.get(bearish_high_holder,i)
-                currentlow = array.get(bearish_low_holder,i)
-                currentbottom = box.get_top(currentgap_fill)
+			if mittigation_filt_fvg=='Touch'
+				currentgap_fill = array.get(bearishgapholder_fill,i)
+				currentgap = array.get(bearishgapholder,i)
+				currenttop = box.get_top(currentgap)
+				currentmid = array.get(bearishmidholder,i)
+				currenthigh = array.get(bearish_high_holder,i)
+				currentlow = array.get(bearish_low_holder,i)
+	
+				if low < currenttop
+					fvg_removed:=-1
+					delete_fvg_func(currentgap,currentgap_fill,i,bearishgapholder,bearishgapholder_fill,bearishmidholder,bearish_high_holder,bearish_low_holder,bearishlabelholder)
+			if mittigation_filt_fvg=='Wicks'
+				currentgap_fill = array.get(bearishgapholder_fill,i)
+				currentgap = array.get(bearishgapholder,i)
+				currenttop = box.get_bottom(currentgap)
+				currentmid = array.get(bearishmidholder,i)
+				currenthigh = array.get(bearish_high_holder,i)
+				currentlow = array.get(bearish_low_holder,i)
+				currentbottom = box.get_top(currentgap_fill)
 
-                if low < currentbottom and fvg_shade_fill
-                    currentgap_f = array.get(bearishgapholder_fill,i)
-                    cur_bottom=box.get_bottom(currentgap_f)
-                    _bottom=box.get_bottom(currentgap)
-                    if _bottom==cur_bottom
-                        box.set_bottom(currentgap_f,low)
-                    else
-                        box.set_bottom(currentgap_f,math.min(cur_bottom,low))
-                    box.set_bgcolor(currentgap_f,#787b865e)
+				if low < currentbottom and fvg_shade_fill
+					currentgap_f = array.get(bearishgapholder_fill,i)
+					cur_bottom=box.get_bottom(currentgap_f)
+					_bottom=box.get_bottom(currentgap)
+					if _bottom==cur_bottom
+						box.set_bottom(currentgap_f,low)
+					else
+						box.set_bottom(currentgap_f,math.min(cur_bottom,low))
+					box.set_bgcolor(currentgap_f,#787b865e)
 
-                if low < currenttop
-                    fvg_removed:=-1
-                    delete_fvg_func(currentgap,currentgap_fill,i,bearishgapholder,bearishgapholder_fill,bearishmidholder,bearish_high_holder,bearish_low_holder,bearishlabelholder)
-            if mittigation_filt_fvg=='Close'
-                currentgap_fill = array.get(bearishgapholder_fill,i)
-                currentgap = array.get(bearishgapholder,i)
-                currenttop = box.get_bottom(currentgap)
-                currentmid = array.get(bearishmidholder,i)
-                currenthigh = array.get(bearish_high_holder,i)
-                currentlow = array.get(bearish_low_holder,i)
-                currentbottom = box.get_top(currentgap_fill)
+				if low < currenttop
+					fvg_removed:=-1
+					delete_fvg_func(currentgap,currentgap_fill,i,bearishgapholder,bearishgapholder_fill,bearishmidholder,bearish_high_holder,bearish_low_holder,bearishlabelholder)
+			if mittigation_filt_fvg=='Close'
+				currentgap_fill = array.get(bearishgapholder_fill,i)
+				currentgap = array.get(bearishgapholder,i)
+				currenttop = box.get_bottom(currentgap)
+				currentmid = array.get(bearishmidholder,i)
+				currenthigh = array.get(bearish_high_holder,i)
+				currentlow = array.get(bearish_low_holder,i)
+				currentbottom = box.get_top(currentgap_fill)
 
-                if low < currentbottom and fvg_shade_fill
-                    currentgap_f = array.get(bearishgapholder_fill,i)
-                    cur_bottom=box.get_bottom(currentgap_f)
-                    _bottom=box.get_bottom(currentgap)
-                    if _bottom==cur_bottom
-                        box.set_bottom(currentgap_f,low)
-                    else
-                        box.set_bottom(currentgap_f,math.min(cur_bottom,low))
-                    box.set_bgcolor(currentgap_f,#787b865e)
+				if low < currentbottom and fvg_shade_fill
+					currentgap_f = array.get(bearishgapholder_fill,i)
+					cur_bottom=box.get_bottom(currentgap_f)
+					_bottom=box.get_bottom(currentgap)
+					if _bottom==cur_bottom
+						box.set_bottom(currentgap_f,low)
+					else
+						box.set_bottom(currentgap_f,math.min(cur_bottom,low))
+					box.set_bgcolor(currentgap_f,#787b865e)
 
-                if close < currenttop
-                    fvg_removed:=-1
-                    delete_fvg_func(currentgap,currentgap_fill,i,bearishgapholder,bearishgapholder_fill,bearishmidholder,bearish_high_holder,bearish_low_holder,bearishlabelholder)
-            if mittigation_filt_fvg=='Average'
-                currentgap_fill = array.get(bearishgapholder_fill,i)
-                currentgap = array.get(bearishgapholder,i)
-                currentmid = array.get(bearishmidholder,i)
-                currenttop = line.get_y1(currentmid)
-                currenthigh = array.get(bearish_high_holder,i)
-                currentlow = array.get(bearish_low_holder,i)
-                currentbottom = box.get_top(currentgap_fill)
+				if close < currenttop
+					fvg_removed:=-1
+					delete_fvg_func(currentgap,currentgap_fill,i,bearishgapholder,bearishgapholder_fill,bearishmidholder,bearish_high_holder,bearish_low_holder,bearishlabelholder)
+			if mittigation_filt_fvg=='Average'
+				currentgap_fill = array.get(bearishgapholder_fill,i)
+				currentgap = array.get(bearishgapholder,i)
+				currentmid = array.get(bearishmidholder,i)
+				currenttop = line.get_y1(currentmid)
+				currenthigh = array.get(bearish_high_holder,i)
+				currentlow = array.get(bearish_low_holder,i)
+				currentbottom = box.get_top(currentgap_fill)
 
-                if low < currentbottom and fvg_shade_fill
-                    currentgap_f = array.get(bearishgapholder_fill,i)
-                    cur_bottom=box.get_bottom(currentgap_f)
-                    _bottom=box.get_bottom(currentgap)
-                    if _bottom==cur_bottom
-                        box.set_bottom(currentgap_f,low)
-                    else
-                        box.set_bottom(currentgap_f,math.min(cur_bottom,low))
-                    box.set_bgcolor(currentgap_f,#787b865e)
+				if low < currentbottom and fvg_shade_fill
+					currentgap_f = array.get(bearishgapholder_fill,i)
+					cur_bottom=box.get_bottom(currentgap_f)
+					_bottom=box.get_bottom(currentgap)
+					if _bottom==cur_bottom
+						box.set_bottom(currentgap_f,low)
+					else
+						box.set_bottom(currentgap_f,math.min(cur_bottom,low))
+					box.set_bgcolor(currentgap_f,#787b865e)
 
-                if low < currenttop
-                    fvg_removed:=-1
-                    delete_fvg_func(currentgap,currentgap_fill,i,bearishgapholder,bearishgapholder_fill,bearishmidholder,bearish_high_holder,bearish_low_holder,bearishlabelholder)
+				if low < currenttop
+					fvg_removed:=-1
+					delete_fvg_func(currentgap,currentgap_fill,i,bearishgapholder,bearishgapholder_fill,bearishmidholder,bearish_high_holder,bearish_low_holder,bearishlabelholder)
 
-    fvg_removed
-                
+	fvg_removed
+				
 // FUNCTION DETRMINE NEW BAR //
 if is_newbar(i_tf)
-    htfH := high
-    htfL := low
+	htfH := high
+	htfL := low
 
 fvg_gap=0
 
 
 if array.size(bullishgapholder) > max_fvg
-    d_box=array.shift(bullishgapholder)
-    box.delete(d_box)
+	d_box=array.shift(bullishgapholder)
+	box.delete(d_box)
 
 if array.size(bullishgapholder_fill) > max_fvg
-    d_box=array.shift(bullishgapholder_fill)
-    box.delete(d_box)
+	d_box=array.shift(bullishgapholder_fill)
+	box.delete(d_box)
 
 if array.size(bullishmidholder) > max_fvg
-    d_line=array.shift(bullishmidholder)
-    line.delete(d_line)
+	d_line=array.shift(bullishmidholder)
+	line.delete(d_line)
 
 if array.size(bullish_high_holder) > max_fvg
-    d_line=array.shift(bullish_high_holder)
-    line.delete(d_line)
+	d_line=array.shift(bullish_high_holder)
+	line.delete(d_line)
 
 if array.size(bullish_low_holder) > max_fvg
-    d_line=array.shift(bullish_low_holder)
-    line.delete(d_line)
+	d_line=array.shift(bullish_low_holder)
+	line.delete(d_line)
 
 if array.size(bearishgapholder) > max_fvg
-    d_box_=array.shift(bearishgapholder)
-    box.delete(d_box_)
+	d_box_=array.shift(bearishgapholder)
+	box.delete(d_box_)
 
 if array.size(bearishgapholder_fill) > max_fvg
-    d_box_=array.shift(bearishgapholder_fill)
-    box.delete(d_box_)
+	d_box_=array.shift(bearishgapholder_fill)
+	box.delete(d_box_)
 
 if array.size(bearishmidholder) > max_fvg
-    d_line_=array.shift(bearishmidholder)
-    line.delete(d_line_)
+	d_line_=array.shift(bearishmidholder)
+	line.delete(d_line_)
 
 if array.size(bearish_high_holder) > max_fvg
-    d_line_=array.shift(bearish_high_holder)
-    line.delete(d_line_)
+	d_line_=array.shift(bearish_high_holder)
+	line.delete(d_line_)
 
 if array.size(bearish_low_holder) > max_fvg
-    d_line_=array.shift(bearish_low_holder)
-    line.delete(d_line_)
-    
+	d_line_=array.shift(bearish_low_holder)
+	line.delete(d_line_)
+	
 n=bar_index
 fvg_removed=validate_fvg_func(high,low)
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//------------------------------------------------------------------------------------------------------------------------------------------------------//
-//---------------------------------------------------------------      LIQUIDITY LEVELS CALCULATIONS & FUNCTIONS     -----------------------------------//
-//------------------------------------------------------------------------------------------------------------------------------------------------------//
+//// ───────────────────────
+/// ─── LIQUIDITY LEVELS CALCULATIONS & FUNCTIONS
+//// ───────────────────────
 highLineColor      = highLineColorHTF
 lowLineColor       = lowLineColorHTF
 highBoxBgColor     = highLineColorHTF
@@ -1105,75 +1056,75 @@ atr_liq            = ta.atr(300)
 float thold_liq    = atr_liq * (box_width / 10)
 
 tf_multi(tf) =>
-    ts       = timeframe.in_seconds("")
-    htfs     = timeframe.in_seconds(tf)
-    htfs     / ts
+	ts       = timeframe.in_seconds("")
+	htfs     = timeframe.in_seconds(tf)
+	htfs     / ts
 
 display_limit_lines(_array, _limit) =>
-    while array.size(_array) > _limit
-        line.delete(array.shift(_array))
+	while array.size(_array) > _limit
+		line.delete(array.shift(_array))
 
 display_limit_boxes(_array, _limit) =>
-    while array.size(_array) > _limit
-        box.delete(array.shift(_array))
+	while array.size(_array) > _limit
+		box.delete(array.shift(_array))
 
 remove_mitigated_lines(_array, _hl, _candleType, _mitiOptions, _lineColor, _lineStyle, _lineWidth, _displayLimit) =>
-    m = false
-    if array.size(_array) > 0      
-        for i  = array.size(_array) - 1 to 0 by 1
-            l  = array.get(_array, i)
-            hh = _candleType == "Close" ? close[1] : high
-            ll = _candleType == "Close" ? close[1] : low
-            if _hl == "High" and hh > line.get_y1(l)
-                array.remove(_array, i)
-                if _mitiOptions == "Show"
-                    line.new(line.get_x1(l), line.get_y1(l), time, line.get_y1(l), xloc = xloc.bar_time, color = _lineColor, style = _lineStyle, width = _lineWidth)
-                line.delete(l)
-                m := true
-            if _hl == "Low" and ll < line.get_y1(l)
-                array.remove(_array, i)
-                if _mitiOptions == "Show"
-                    line.new(line.get_x1(l), line.get_y1(l), time, line.get_y1(l), xloc = xloc.bar_time, color = _lineColor, style = _lineStyle, width = _lineWidth)
-                line.delete(l) 
-                m := true  
-    display_limit_lines(_array, _displayLimit) 
-    m
+	m = false
+	if array.size(_array) > 0      
+		for i  = array.size(_array) - 1 to 0 by 1
+			l  = array.get(_array, i)
+			hh = _candleType == "Close" ? close[1] : high
+			ll = _candleType == "Close" ? close[1] : low
+			if _hl == "High" and hh > line.get_y1(l)
+				array.remove(_array, i)
+				if _mitiOptions == "Show"
+					line.new(line.get_x1(l), line.get_y1(l), time, line.get_y1(l), xloc = xloc.bar_time, color = _lineColor, style = _lineStyle, width = _lineWidth)
+				line.delete(l)
+				m := true
+			if _hl == "Low" and ll < line.get_y1(l)
+				array.remove(_array, i)
+				if _mitiOptions == "Show"
+					line.new(line.get_x1(l), line.get_y1(l), time, line.get_y1(l), xloc = xloc.bar_time, color = _lineColor, style = _lineStyle, width = _lineWidth)
+				line.delete(l) 
+				m := true  
+	display_limit_lines(_array, _displayLimit) 
+	m
 
 remove_mitigated_boxes(_array, _hl, _candleType, _mitiOptions, _bgColor, _borderColor, _lineStyle, _lineWidth, _displayLimit) =>
-    m = false
-    if array.size(_array) > 0
-        for i  = array.size(_array) - 1 to 0 by 1
-            l  = array.get(_array, i)
-            hh = _candleType == "Close" ? close[1] : high
-            ll = _candleType == "Close" ? close[1] : low
-            if _hl == "High" and hh > box.get_top(l)
-                array.remove(_array, i)
-                if _mitiOptions == "Show"
-                    box.new(box.get_left(l), box.get_top(l), time, box.get_bottom(l), xloc = xloc.bar_time, bgcolor = color.new(_bgColor, 90), border_color = color.new(_borderColor, 90), border_style = _lineStyle, border_width = _lineWidth)
-                box.delete(l)
-                m := true
-            if _hl == "Low" and ll < box.get_top(l)
-                array.remove(_array, i)
-                if _mitiOptions == "Show"
-                    box.new(box.get_left(l), box.get_top(l), time, box.get_bottom(l), xloc = xloc.bar_time, bgcolor = color.new(_bgColor, 90), border_color = color.new(_borderColor, 90), border_style = _lineStyle, border_width = _lineWidth)
-                box.delete(l)
-                m := true
-    display_limit_boxes(_array, _displayLimit) 
-    m
+	m = false
+	if array.size(_array) > 0
+		for i  = array.size(_array) - 1 to 0 by 1
+			l  = array.get(_array, i)
+			hh = _candleType == "Close" ? close[1] : high
+			ll = _candleType == "Close" ? close[1] : low
+			if _hl == "High" and hh > box.get_top(l)
+				array.remove(_array, i)
+				if _mitiOptions == "Show"
+					box.new(box.get_left(l), box.get_top(l), time, box.get_bottom(l), xloc = xloc.bar_time, bgcolor = color.new(_bgColor, 90), border_color = color.new(_borderColor, 90), border_style = _lineStyle, border_width = _lineWidth)
+				box.delete(l)
+				m := true
+			if _hl == "Low" and ll < box.get_top(l)
+				array.remove(_array, i)
+				if _mitiOptions == "Show"
+					box.new(box.get_left(l), box.get_top(l), time, box.get_bottom(l), xloc = xloc.bar_time, bgcolor = color.new(_bgColor, 90), border_color = color.new(_borderColor, 90), border_style = _lineStyle, border_width = _lineWidth)
+				box.delete(l)
+				m := true
+	display_limit_boxes(_array, _displayLimit) 
+	m
 
 extend_line_to_current(lineArray, _length_extend, _timediff) =>
-    if array.size(lineArray) > 0
-        for i = array.size(lineArray) - 1 to 0 by 1
-            l = array.get(lineArray, i)
-            timeExt = timenow + ((_timediff) * _length_extend)
-            line.set_x2(l, timeExt)
+	if array.size(lineArray) > 0
+		for i = array.size(lineArray) - 1 to 0 by 1
+			l = array.get(lineArray, i)
+			timeExt = timenow + ((_timediff) * _length_extend)
+			line.set_x2(l, timeExt)
 
 extend_box_to_current(boxArray, _length_extend, _timediff) =>
-    if array.size(boxArray) > 0
-        for i = array.size(boxArray) - 1 to 0 by 1
-            b = array.get(boxArray, i)
-            timeExt = timenow + ((_timediff) * _length_extend)
-            box.set_right(b, timeExt)
+	if array.size(boxArray) > 0
+		for i = array.size(boxArray) - 1 to 0 by 1
+			b = array.get(boxArray, i)
+			timeExt = timenow + ((_timediff) * _length_extend)
+			box.set_right(b, timeExt)
 
 var highLineArrayHTF = array.new_line()
 var lowLineArrayHTF  = array.new_line()  
@@ -1189,52 +1140,52 @@ timeExt      = time + ((time[1] - time[2]) * 10)
 dis          = leftBars + tf_multi(htfTF)
 
 label_size_external = switch textSize
-    "XS"   => size.tiny
-    "S"  => size.small
-    "M" => size.normal
-    "L"  => size.large
-    "XL"   => size.huge
+	"XS"   => size.tiny
+	"S"  => size.small
+	"M" => size.normal
+	"L"  => size.large
+	"XL"   => size.huge
 
 highest_volume    = ta.highest(vol, 300)
 volume_percentage = (vol / highest_volume) * 100
 
 format_volume(vol) =>
-    vol >= 1000000000 ? str.tostring(vol / 1000000000, '#.##') + "B" : vol >= 1000000 ? str.tostring(vol / 1000000, '#.##') + "M" : str.tostring(vol / 1000, '#.##') + "K"
+	vol >= 1000000000 ? str.tostring(vol / 1000000000, '#.##') + "B" : vol >= 1000000 ? str.tostring(vol / 1000000, '#.##') + "M" : str.tostring(vol / 1000, '#.##') + "K"
 
 // Function to format the timeframe string
 format_tf(tf) =>
-    tf == "1" ? "1Min" :tf == "2" ? "2Min" : tf == "3" ? "3Min" : tf == "5" ? "5Min" : tf == "10" ? "10Min" : tf == "15" ? "15Min" : tf == "30" ? "30Min" : tf == "45" ? "45Min" : tf == "60" ? "1H" : tf == "120" ? "2H" : tf == "180" ? "3H" : tf == "240" ? "4H" :  tf == "D" ? "1D" : tf == "W" ? "1W" : tf == "M" ? "1M" :  tf == "M" ? "3M" :tf == "M" ? "6M" : tf == "Y" ? "1Y" : tf
+	tf == "1" ? "1Min" :tf == "2" ? "2Min" : tf == "3" ? "3Min" : tf == "5" ? "5Min" : tf == "10" ? "10Min" : tf == "15" ? "15Min" : tf == "30" ? "30Min" : tf == "45" ? "45Min" : tf == "60" ? "1H" : tf == "120" ? "2H" : tf == "180" ? "3H" : tf == "240" ? "4H" :  tf == "D" ? "1D" : tf == "W" ? "1W" : tf == "M" ? "1M" :  tf == "M" ? "3M" :tf == "M" ? "6M" : tf == "Y" ? "1Y" : tf
 
 if currentTF
-    if pivotHighHTF
-        if displayStyle_liq == "Lines"
-            array.push(highLineArrayHTF, line.new(_time[dis], _high[dis], _time[+1], _high[dis], color = highLineColorHTF, style = highLineStyleHTF, xloc = xloc.bar_time, extend = extentionMax ? extend.right : extend.none, width = lineWidthHTF))
-        else
-            y1 = _high[dis] - thold_liq
-            volume_text = (htfTF == "" ? "" : "(" + format_tf(htfTF) + ") ") + "Buy Side 💲"
-            if show_volume
-                volume_text := volume_text + format_volume(vol)
-            if show_percentage
-                volume_text := volume_text + " (" + str.tostring(volume_percentage, '#.##') + "%)"
-            if not show_text
-                volume_text := ""
-            array.push(highBoxArrayHTF, box.new(_time[dis], _high[dis], _time[+1], y1, bgcolor = highLineColorHTF, border_color = highBoxBorderColorHTF, xloc = xloc.bar_time, border_style = highLineStyleHTF, extend = extentionMax ? extend.right : extend.none, border_width = lineWidthHTF, text = volume_text, text_halign = text.align_center, text_color = liquidity_text_color, text_size = label_size_external))
-            display_limit_boxes(highBoxArrayHTF, displayLimitBuy)
-            
-    if pivotLowHTF
-        if displayStyle_liq == "Lines"
-            array.push(lowLineArrayHTF, line.new(_time[dis], _low[dis], _time[+1], _low[dis], color = lowLineColorHTF, style = highLineStyleHTF, xloc = xloc.bar_time, extend = extentionMax ? extend.right : extend.none, width = lineWidthHTF))
-        else
-            y1 = _low[dis] + thold_liq
-            volume_text = (htfTF == "" ? "" : "(" + format_tf(htfTF) + ") ") + "Sell Side 💲"
-            if show_volume
-                volume_text := volume_text + format_volume(vol)
-            if show_percentage
-                volume_text := volume_text + " (" + str.tostring(volume_percentage, '#.##') + "%)"
-            if not show_text
-                volume_text := ""
-            array.push(lowBoxArrayHTF, box.new(_time[dis], _low[dis], _time[+1], y1, bgcolor = lowLineColorHTF, border_color = lowBoxBorderColorHTF, xloc = xloc.bar_time, border_style = highLineStyleHTF, extend = extentionMax ? extend.right : extend.none, border_width = lineWidthHTF, text = volume_text, text_halign = text.align_center, text_color = liquidity_text_color, text_size = label_size_external))
-            display_limit_boxes(lowBoxArrayHTF, displayLimitSell)
+	if pivotHighHTF
+		if displayStyle_liq == "Lines"
+			array.push(highLineArrayHTF, line.new(_time[dis], _high[dis], _time[+1], _high[dis], color = highLineColorHTF, style = highLineStyleHTF, xloc = xloc.bar_time, extend = extentionMax ? extend.right : extend.none, width = lineWidthHTF))
+		else
+			y1 = _high[dis] - thold_liq
+			volume_text = (htfTF == "" ? "" : "(" + format_tf(htfTF) + ") ") + "Buy Side 💲"
+			if show_volume
+				volume_text := volume_text + format_volume(vol)
+			if show_percentage
+				volume_text := volume_text + " (" + str.tostring(volume_percentage, '#.##') + "%)"
+			if not show_text
+				volume_text := ""
+			array.push(highBoxArrayHTF, box.new(_time[dis], _high[dis], _time[+1], y1, bgcolor = highLineColorHTF, border_color = highBoxBorderColorHTF, xloc = xloc.bar_time, border_style = highLineStyleHTF, extend = extentionMax ? extend.right : extend.none, border_width = lineWidthHTF, text = volume_text, text_halign = text.align_center, text_color = liquidity_text_color, text_size = label_size_external))
+			display_limit_boxes(highBoxArrayHTF, displayLimitBuy)
+			
+	if pivotLowHTF
+		if displayStyle_liq == "Lines"
+			array.push(lowLineArrayHTF, line.new(_time[dis], _low[dis], _time[+1], _low[dis], color = lowLineColorHTF, style = highLineStyleHTF, xloc = xloc.bar_time, extend = extentionMax ? extend.right : extend.none, width = lineWidthHTF))
+		else
+			y1 = _low[dis] + thold_liq
+			volume_text = (htfTF == "" ? "" : "(" + format_tf(htfTF) + ") ") + "Sell Side 💲"
+			if show_volume
+				volume_text := volume_text + format_volume(vol)
+			if show_percentage
+				volume_text := volume_text + " (" + str.tostring(volume_percentage, '#.##') + "%)"
+			if not show_text
+				volume_text := ""
+			array.push(lowBoxArrayHTF, box.new(_time[dis], _low[dis], _time[+1], y1, bgcolor = lowLineColorHTF, border_color = lowBoxBorderColorHTF, xloc = xloc.bar_time, border_style = highLineStyleHTF, extend = extentionMax ? extend.right : extend.none, border_width = lineWidthHTF, text = volume_text, text_halign = text.align_center, text_color = liquidity_text_color, text_size = label_size_external))
+			display_limit_boxes(lowBoxArrayHTF, displayLimitSell)
 
 // Extend and remove old lines and boxes
 extend_line_to_current(highLineArrayHTF, length_extend_liq, timediff)
@@ -1242,11 +1193,9 @@ extend_line_to_current(lowLineArrayHTF, length_extend_liq, timediff)
 extend_box_to_current(highBoxArrayHTF, length_extend_liq, timediff)
 extend_box_to_current(lowBoxArrayHTF, length_extend_liq, timediff)
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//------------------------------------------------------------------------------------------------------------------------------------------------------//
-//---------------------------------------------------------------      MARKET STRUCTURE CALCULATIONS & FUNCTION     ------------------------------------//
-//------------------------------------------------------------------------------------------------------------------------------------------------------//
+//// ───────────────────────
+/// ─── MARKET STRUCTURE CALCULATIONS & FUNCTION
+//// ───────────────────────
 bosConfType      = 'Candle High'
 CHOCH            = true
 pivot_high_found = ta.pivothigh(high, swingSize_swing, swingSize_swing)
@@ -1258,53 +1207,53 @@ bool higher_highs = false, bool lower_highs = false, bool higher_lows = false, b
 var int prevSwing_s = 0
 
 if not na(pivot_high_found)
-    if pivot_high_found >= prevHigh_s
-        higher_highs := true
-        prevSwing_s := 2
-    else
-        lower_highs := true
-        prevSwing_s := 1
-    prevHigh_s := pivot_high_found
-    prevHighIndex_s := bar_index - swingSize_swing
+	if pivot_high_found >= prevHigh_s
+		higher_highs := true
+		prevSwing_s := 2
+	else
+		lower_highs := true
+		prevSwing_s := 1
+	prevHigh_s := pivot_high_found
+	prevHighIndex_s := bar_index - swingSize_swing
 
 if not na(pivot_low_found)
-    if pivot_low_found >= prevLow_s
-        higher_lows := true
-        prevSwing_s := -1
-    else
-        lower_lows := true
-        prevSwing_s := -2
-    prevLow_s := pivot_low_found
-    prevLowIndex_s := bar_index - swingSize_swing
+	if pivot_low_found >= prevLow_s
+		higher_lows := true
+		prevSwing_s := -1
+	else
+		lower_lows := true
+		prevSwing_s := -2
+	prevLow_s := pivot_low_found
+	prevLowIndex_s := bar_index - swingSize_swing
 
 if higher_highs and showSwing
-    label.new(bar_index - swingSize_swing, pivot_high_found, 'HH', color=CLEAR, style=label.style_label_down, textcolor=swingColor, size=label_size_swing_s)
+	label.new(bar_index - swingSize_swing, pivot_high_found, 'HH', color=CLEAR, style=label.style_label_down, textcolor=swingColor, size=label_size_swing_s)
 if lower_highs and showSwing
-    label.new(bar_index - swingSize_swing, pivot_high_found, 'LH', color=CLEAR, style=label.style_label_down, textcolor=swingColor, size=label_size_swing_s)
+	label.new(bar_index - swingSize_swing, pivot_high_found, 'LH', color=CLEAR, style=label.style_label_down, textcolor=swingColor, size=label_size_swing_s)
 if higher_lows and showSwing
-    label.new(bar_index - swingSize_swing, pivot_low_found, 'HL', color=CLEAR, style=label.style_label_up, textcolor=swingColor, size=label_size_swing_s)
+	label.new(bar_index - swingSize_swing, pivot_low_found, 'HL', color=CLEAR, style=label.style_label_up, textcolor=swingColor, size=label_size_swing_s)
 if lower_lows and showSwing
-    label.new(bar_index - swingSize_swing, pivot_low_found, 'LL', color=CLEAR, style=label.style_label_up, textcolor=swingColor, size=label_size_swing_s)
+	label.new(bar_index - swingSize_swing, pivot_low_found, 'LL', color=CLEAR, style=label.style_label_up, textcolor=swingColor, size=label_size_swing_s)
 
 // EQH & EQL //
 atr_ = ta.atr(200)
 var high_eqh_pre = 0., var eq_top_x = 0, var low_eqh_pre = 0., var eq_btm_x = 0
 
 if show_equal_highlow
-    high_eqh = ta.pivothigh(length_eqh, length_eqh)
-    low_eqh  = ta.pivotlow(length_eqh, length_eqh)
-    if not na(low_eqh) 
-        if math.min(low_eqh, low_eqh_pre) > math.max(low_eqh, low_eqh_pre) - atr_ * eq_threshold
-            eql_line = line.new(eq_btm_x, low_eqh_pre, n-length_eqh, low_eqh, color=eq_bull_color, style=line.style_dotted)
-            eql_lbl  = label.new(int(math.avg(n-length_eqh, eq_btm_x)), low_eqh, 'EQL', color=#00000000, textcolor=eq_bull_color, style=label.style_label_up, size=label_size_Equal_s)
-        low_eqh_pre := low_eqh
-        eq_btm_x    := n-length_eqh
-    if not na(high_eqh)     
-        if math.max(high_eqh, high_eqh_pre) < math.min(high_eqh, high_eqh_pre) + atr_ * eq_threshold
-            eqh_line = line.new(eq_top_x, high_eqh_pre, n-length_eqh, high_eqh, color=eq_bear_color, style=line.style_dotted)
-            eqh_lbl  = label.new(int(math.avg(n-length_eqh, eq_top_x)), high_eqh, 'EQH', color=#00000000, textcolor=eq_bear_color, style=label.style_label_down, size=label_size_Equal_s)
-        high_eqh_pre:= high_eqh
-        eq_top_x    := n-length_eqh
+	high_eqh = ta.pivothigh(length_eqh, length_eqh)
+	low_eqh  = ta.pivotlow(length_eqh, length_eqh)
+	if not na(low_eqh) 
+		if math.min(low_eqh, low_eqh_pre) > math.max(low_eqh, low_eqh_pre) - atr_ * eq_threshold
+			eql_line = line.new(eq_btm_x, low_eqh_pre, n-length_eqh, low_eqh, color=eq_bull_color, style=line.style_dotted)
+			eql_lbl  = label.new(int(math.avg(n-length_eqh, eq_btm_x)), low_eqh, 'EQL', color=#00000000, textcolor=eq_bull_color, style=label.style_label_up, size=label_size_Equal_s)
+		low_eqh_pre := low_eqh
+		eq_btm_x    := n-length_eqh
+	if not na(high_eqh)     
+		if math.max(high_eqh, high_eqh_pre) < math.min(high_eqh, high_eqh_pre) + atr_ * eq_threshold
+			eqh_line = line.new(eq_top_x, high_eqh_pre, n-length_eqh, high_eqh, color=eq_bear_color, style=line.style_dotted)
+			eqh_lbl  = label.new(int(math.avg(n-length_eqh, eq_top_x)), high_eqh, 'EQH', color=#00000000, textcolor=eq_bear_color, style=label.style_label_down, size=label_size_Equal_s)
+		high_eqh_pre:= high_eqh
+		eq_top_x    := n-length_eqh
 
 [high_ms, low_ms] = calculate_swing_points(externalLength)
 n := bar_index
@@ -1314,69 +1263,67 @@ hl() => [high, low]
 var float thold = (ta.highest(300) - ta.lowest(300)) * math.max(0.5, 0.1) / 100.
 [int_high_ms, int_low_ms] = calculate_swing_points(internalLength)
 if low_ms
-    crossed_down := true
-    y_dn := low_ms
-    x_dn := n - externalLength
+	crossed_down := true
+	y_dn := low_ms
+	x_dn := n - externalLength
 if high_ms
-    crossed_up := true
-    y_up := high_ms
-    x_up := n - externalLength
+	crossed_up := true
+	y_up := high_ms
+	x_up := n - externalLength
 if int_low_ms
-    internal_dn_broke := true
-    internal_y_dn := int_low_ms
-    internal_x_dn := n - internalLength
+	internal_dn_broke := true
+	internal_y_dn := int_low_ms
+	internal_x_dn := n - internalLength
 if int_high_ms
-    internal_up_broke := true
-    internal_y_up := int_high_ms
-    internal_x_up := n - internalLength
+	internal_up_broke := true
+	internal_y_up := int_high_ms
+	internal_x_up := n - internalLength
 bull_CHOCH = false, bull_CHOCH_ = false, bull_bos = false, bull_bos_ = false, bear_CHOCH = false, bear_CHOCH_ = false, bear_bos = false, bear_bos_ = false
 if ta.crossover(close, internal_y_up) and internal_up_broke and y_up != internal_y_up
-    bool MSS = na
-    CHOCH := int_t_MS < 0
-    internal_up_broke := false
-    int_t_MS := 1
-    bull_CHOCH := CHOCH ? true : false
-    bull_bos := CHOCH ? false : true
-    if showInternalMS
-        Show_MS(internal_x_up, internal_y_up, CHOCH ? 'CHOCH' : 'BOS', internalBullColor, true, true, label_size_Internal_s)
+	bool MSS = na
+	CHOCH := int_t_MS < 0
+	internal_up_broke := false
+	int_t_MS := 1
+	bull_CHOCH := CHOCH ? true : false
+	bull_bos := CHOCH ? false : true
+	if showInternalMS
+		Show_MS(internal_x_up, internal_y_up, CHOCH ? 'CHOCH' : 'BOS', internalBullColor, true, true, label_size_Internal_s)
 if ta.crossunder(close, internal_y_dn) and internal_dn_broke and y_dn != internal_y_dn 
-    bool MSS = false
-    CHOCH := int_t_MS > 0    
-    internal_dn_broke := false
-    int_t_MS := -1
-    bear_CHOCH := CHOCH ? true : false
-    bear_bos := CHOCH ? false : true
-    if showInternalMS
-        Show_MS(internal_x_dn, internal_y_dn, CHOCH ? 'CHOCH' : 'BOS', internalBearColor, true, false, label_size_Internal_s)
+	bool MSS = false
+	CHOCH := int_t_MS > 0    
+	internal_dn_broke := false
+	int_t_MS := -1
+	bear_CHOCH := CHOCH ? true : false
+	bear_bos := CHOCH ? false : true
+	if showInternalMS
+		Show_MS(internal_x_dn, internal_y_dn, CHOCH ? 'CHOCH' : 'BOS', internalBearColor, true, false, label_size_Internal_s)
 
 if ta.crossover(close, y_up) and crossed_up
-    bool MSS = na
-    MSS := t_MS < 0
-    crossed_up := false
-    t_MS := 1
-    bull_CHOCH_ := MSS ? true : false
-    bull_bos_ := MSS ? false : true
-    if showExternalMS
-        Show_MS(x_up, y_up, MSS ? 'CHOCH+' : 'BOS+', externalBullColor, false, true, label_size_External_s)
+	bool MSS = na
+	MSS := t_MS < 0
+	crossed_up := false
+	t_MS := 1
+	bull_CHOCH_ := MSS ? true : false
+	bull_bos_ := MSS ? false : true
+	if showExternalMS
+		Show_MS(x_up, y_up, MSS ? 'CHOCH+' : 'BOS+', externalBullColor, false, true, label_size_External_s)
 if ta.crossunder(close, y_dn) and crossed_down
-    bool MSS = na
-    MSS := t_MS > 0
-    crossed_down := false
-    t_MS := -1
-    bear_CHOCH_ := MSS ? true : false
-    bear_bos_ := MSS ? false : true
-    if showExternalMS
-        Show_MS(x_dn, y_dn, MSS ? 'CHOCH+' : 'BOS+', externalBearColor, false, false, label_size_External_s)
+	bool MSS = na
+	MSS := t_MS > 0
+	crossed_down := false
+	t_MS := -1
+	bear_CHOCH_ := MSS ? true : false
+	bear_bos_ := MSS ? false : true
+	if showExternalMS
+		Show_MS(x_dn, y_dn, MSS ? 'CHOCH+' : 'BOS+', externalBearColor, false, false, label_size_External_s)
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-
-//------------------------------------------------------------------------------------------------------------------------------------------------------//
-//---------------------------------------------------------------       ALERTS     ---------------------------------------------------------------------//
-//------------------------------------------------------------------------------------------------------------------------------------------------------//
+//// ───────────────────────
+/// ─── ALERTS
+//// ───────────────────────
 // FVG ALERTS //
 if is_newbar(i_tf) and (i_mtf == "Current + HTF" or i_mtf == "HTF") and show_fvg and barstate.isconfirmed
-    fvg_gap:=check_fvg_func(sClose,htfH,sHighP2,htfL,sLowP2,sOpen,time[2],true)
-    
+	fvg_gap:=check_fvg_func(sClose,htfH,sHighP2,htfL,sLowP2,sOpen,time[2],true)
+	
 alertcondition(fvg_gap==1,"Bullish FVG","Bullish FVG Found")
 alertcondition(fvg_gap==-1,"Bearish FVG","Bearish FVG Found")
 
@@ -1395,4 +1342,4 @@ alertcondition(bear_CHOCH_, "Bearish CHOCH+", 'Bearish CHOCH+ Found')
 alertcondition(bear_bos_, "Bearish BOS+", 'Bearish BOS+ Found')
 alertcondition(bull_bos_, "Bullish BOS+", 'Bullish BOS+ Found')
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//// ─────────────────────── 
