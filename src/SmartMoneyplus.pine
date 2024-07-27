@@ -1,16 +1,16 @@
-// ╔════════════════════════════════════╗
-// ║	Market Sentiment Technicals 	║
-// ║	@   Allen.						║
-// ║	©   WeloTrades   					║
-// ╚════════════════════════════════════╝
+/// ╔═══════════════════════════════╗
+/// ║ 	Smart Money Concept plus	║
+/// ║ 	@	Ultr.					║
+/// ║ 	©	WeloTrades				║
+/// ╚═══════════════════════════════╝
 
 //@version=5
 indicator(title = 'Smart Money Concepts Plus [Allen]', shorttitle = 'SMC+ [Allen]', overlay = true, max_boxes_count = 500, max_labels_count = 500, max_lines_count = 500, max_bars_back = 5000)
 
-
 //// ───────────────────────
-//  ─── SMC+ ─────────────
-//  ─── Colors ─────────────
+/// ─── SMC + ──────
+/// ─── Colors ─────
+//// ───────────────────────
 
 /// ─── Standard ──
 	// color.aqua								= #00BCD4
@@ -267,20 +267,22 @@ AllenMint60								= #33ffac								// AllenMint60
 
 AllenWine50								= #e91e63								// AllenWine50
 
-//// ─────────────
+//// ─────────────────────────────────────────────────────────────────────
 
 //// ───────────────────────
-/// ─── OB INPUT SETTINGS
+/// ─── SMC + ──────
+/// ─── Variables ──
 //// ───────────────────────
-var grpOBs					= '───── OB SETTINGS ─────'
 
-// OB Settings for multiple timeframes
+var grpOBs					= '─── OB Config ───'
+
+/// OB Settings for multiple timeframes
 timeframe1Enabled			= input.bool		(defval = true,			title = "TF #1",				inline = '1',			group = grpOBs)
 timeframe1					= input.timeframe	(defval = "",			title = "",						inline = '1',			group = grpOBs)
 timeframe2Enabled			= input.bool		(defval = false,		title = "TF #2",				inline = '1',			group = grpOBs)
 timeframe2					= input.timeframe	(defval = "",			title = "",						inline = '1',			group = grpOBs,		tooltip="Select Display from Timeframe #1 + select Timeframe / Select Display from Timeframe #2 + select Timeframe")
 
-// Swing OB settings
+/// Swing OB settings
 swingLength					= input.int			(defval = 10,			title = 'Swing OB Length',		inline = '2_',			group = grpOBs,		minval = 3,	display = display.none,	tooltip = "Set the length for Swing OB.")
 zoneCount					= input.string		(defval = "5",			title = 'Max OB', 				inline = '2', 			group = grpOBs,		options = ["10", "5", "3", "1"],	display = display.none)
 bullOrderBlockColor			= input.color		(color.new(ARoPrimary, 60),			title = '',			inline = '2',			group = grpOBs,		display = display.none)
@@ -288,19 +290,19 @@ bearOrderBlockColor			= input.color		(color.new(AllenWine50, 60),		title = '',		
 obEndMethod					= input.string		(defval = "Close",		title = "Mitigation Method",	inline = '3',			group = grpOBs,		options = ["Wick", "Close"],		display = display.none)
 showInvalidated				= input.bool		(defval = false,		title = "historical",			inline = '3',			group = grpOBs,		display = display.none,				tooltip = "Method for OB mitigation / Show invalidated historical OBs.")
 
-// OB box length settings
+/// OB box length settings
 obBoxLengthOption			= input.string		(defval = "Extended Range",	title = "↔ OB Range",		inline = '4',			group = grpOBs,		options = ["Range", "Extended Range"])
 adjustableLength			= input.int			(defval = 22000,		title = "",						inline = '4',			group = grpOBs,		minval = 1000,	maxval = 500000,	step = 1000,	tooltip="Set Length for OB box (extended range = adjustable)")
 
-// OB Text size and individual toggle display boxes
+/// OB Text size and individual toggle display boxes
 textSizeOption				= input.string		(defval = "S",			title = "Text Options", 		inline = '5',			group = grpOBs,		options = ["XS", "S", "M", "L", "XL"])
 textColor					= input.color		(color.new(AmeTrGrayNickel, 75),	title = "",			inline = '5',			group = grpOBs)
 showTimeframeOB				= input.bool		(defval = true,			title = "TF Text",				inline = '5',			group = grpOBs)
 showVolume					= input.bool		(defval = true,			title = "Volume",				inline = '5',			group = grpOBs)
 showPercentage				= input.bool		(defval = true,			title = "%",					inline = '5',			group = grpOBs,		tooltip= "Set Text Size & Color for OB / Toggle Display to show or hide 'TEXT','VOLUME','%'")
 
-// OB locked settings
-var grpGENERAL					= '───── GENERAL CONFIGURATION ─────'
+/// OB locked settings
+var grpGENERAL					= '─── Config General ───'
 
 OBsEnabled					= true
 const bool DEBUG			= false
@@ -310,7 +312,7 @@ maxATRMult					= DEBUG				? input.float	(defval = 3.5,		title = "Max Atr Multipl
 bullishOrderBlocks			= zoneCount			== "1"	? 1	: zoneCount == "3" ? 3 : zoneCount == "5" ? 5 : zoneCount == "10" ? 10 : 20
 bearishOrderBlocks			= zoneCount			== "1"	? 1	: zoneCount == "3" ? 3 : zoneCount == "5" ? 5 : zoneCount == "10" ? 10 : 20
 
-var grpSTYLE					= '───── STYLE ─────'
+var grpSTYLE					= '─── Estilo ───'
 
 extendZonesBy				= DEBUG				? input.int		(defval = 15,		title = "Extend Zones",				inline = "ExtendZones",		group = grpSTYLE,	minval = 1, maxval = 30) : 15
 extendZonesDynamic			= DEBUG				? input.bool	(defval = true,		title = "Dynamic",					inline = "ExtendZones",		group = grpSTYLE)	: true
@@ -324,61 +326,63 @@ atr = ta.atr(10)
 //// ─────────────────────── 
 /// ─── FAIR VALUE GAPS INPUT SETTINGS
 //// ─────────────────────── 
-// FVG Settings for timeframes
-var grpFVG					= '───── FAIR VALUE GAPS ─────'
+/// FVG Settings for timeframes
+var grpFVG					= '─── FVG ───'
 
 show_fvg					= input				(defval = true,			title = 'FVG TF',				inline = 'tf',			group = grpFVG)
 i_tf						= input.timeframe	(defval = "",			title = "" ,					inline = 'tf',			group = grpFVG,		tooltip="Toggle visibility of Fair Value Gaps / Select Timeframe to Display on Chart")
 
-// FVG Settings for Mitigation
+/// FVG Settings for Mitigation
 mittigation_filt_fvg		= input.string		(defval = 'Wicks',		title = 'Mitigation Method',	inline = "m1",			group = grpFVG,		options = ['Touch','Wicks','Close','Average'])
 fvg_color_fill				= input.bool		(defval = true,			title = "Fill" ,				inline = "m1",			group = grpFVG)
 fvg_shade_fill				= input.bool		(defval = false,		title = "Shade" ,				inline = "m1",			group = grpFVG,		tooltip = "Select the method to mitigate Fair Value Gaps / Toggle to fill Fair Value Gaps / Toggle to shade Fair Value Gaps")
 mid_style					= input.string		(defval = 'Solid',		title = '〰 Line Style',		inline = "mid",			group = grpFVG,		options = ['Solid', 'Dashed', 'Dotted'])
 i_midPointColor				= input.color		(color.new(AmeTrGrayNickel, 90),	title = "" ,		inline = "mid",			group = grpFVG,		tooltip = "Select the style for mid line of Fair Value Gaps / Select color for mid line of Fair Value Gaps")
 
-// FVG Count Settings
+/// FVG Count Settings
 max_fvg						= input.int			(defval = 5,			title = "Max FVG",				inline = "O1",			group = grpFVG,		minval = 0,	maxval = 50)
 i_mtfbearishfvgcolor		= input.color		(color.new(BrLiYel20, 95),			title = "" ,		inline = "O1",			group = grpFVG)
 i_mtfbullishfvgcolor		= input.color		(color.new(BrLiYel40, 95),			title = "" ,		inline = "O1",			group = grpFVG,		tooltip="Set the maximum number of Fair Value Gaps to display / Select color for bearish Fair Value Gaps / Select color for bullish Fair Value Gaps")
 
-// FVG Length Settings
+/// FVG Length Settings
 length_extend				= input.int			(defval = 20,			title = "↔ FVG Range",			inline = "O2",			group = grpFVG,		minval = 0,	maxval = 100)
 fvg_extend					= input.bool		(defval = false,		title = "Extend" ,				inline = "O2",			group = grpFVG)
 fvg_extend_B				= input.bool		(defval = true,			title = "Range" ,				inline = "O2",			group = grpFVG,		tooltip="Set the length of Fair Value Gaps / Toggle to extend Fair Value Gaps / Toggle (RANGE) option to extend Fair Value Gaps")
 
-// FVG Filter Settings
+/// FVG Filter Settings
 max_width_fvg				= input.float		(defval = 1.5,			title = '↕ Max Width',			inline = 'width',		group = grpFVG,		minval = 0, maxval = 5.0, step = 0.1)
 remove_small				= input.bool		(defval = true,			title = "Filter FVG" ,			inline = "width",		group = grpFVG,		tooltip="Set the maximum width of Fair Value Gaps / Toggle to filter out small Fair Value Gaps")
 
-//// ─────────────────────── 
-/// ─── LIQUIDITY LEVELS INPUT SETTINGS
-//// ─────────────────────── 
-// Liquidity Settings for timeframes
-var grpLIQUID				= '───── LIQUIDITY LEVELS ─────'
+//// ───────────────────────
+/// ─── SMC + ──────
+/// ─── Liquidity Levels Input Settings
+//// ───────────────────────
+
+/// Liquidity Settings for timeframes
+var grpLIQUID				= '─── Niveles de Liquidez ───'
 
 currentTF					= input.bool		(defval = true,			title = "Liquidity TF",			inline = "1",			group = grpLIQUID)
 htfTF						= input.timeframe	(defval = "",			title = "",						inline = "1",			group = grpLIQUID,		tooltip = "Toggle visibility of Liquidity Levels / Select Timeframe for Liquidity Levels")
 leftBars					= input.int			(defval = 10,			title = "Liquidity Length",		inline = "1_",			group = grpLIQUID,		tooltip = "Set the length for Pivot calculation")
 displayStyle_liq			= "Boxes"
 
-// Liquidity Buy Side Count Settings
+/// Liquidity Buy Side Count Settings
 displayLimitBuy				= input.int			(defval = 5,			title = "Max Buy Side Levels",	inline = "2",			group = grpLIQUID)
 highLineColorHTF			= input.color		(color.new(AllenWine50, 80),		title = "",			inline = "2",			group = grpLIQUID,		tooltip = "Set the maximum number of Buy Side Liquidity Levels to display / Select color for Buy Side Liquidity Levels")
 highBoxBorderColorHTF		= color.new			(AllenWine50, 70)
 // highBoxBorderColorHTF		= color.new			(highLineColorHTF, 50)
 
-// Liquidity Sell Side Count Settings
+/// Liquidity Sell Side Count Settings
 displayLimitSell			= input.int			(defval = 5,			title = "Max Sell Side Levels", inline = "3",			group = grpLIQUID)
 lowLineColorHTF				= input.color		(color.new(ARoPrimary, 80),			title = "",			inline = "3",			group = grpLIQUID,		tooltip = "Set the maximum number of Sell Side Liquidity Levels to display / Select color for Sell Side Liquidity Levels")
 lowBoxBorderColorHTF		= color.new			(ARoPrimary, 70)
 // lowBoxBorderColorHTF		= color.new			(lowLineColorHTF, 50)
 
-// Liquidity Mitigation Settings
+/// Liquidity Mitigation Settings
 mitiOptions					= input.string		(defval = "Remove",		title = "Mitigation Method",	inline = "4",			group = grpLIQUID,		options = ["Remove", "Show"])
 _candleType					= input.string		(defval = "Close",		title = "",						inline = '4',			group = grpLIQUID,		options = ["Close", "Wick"],	tooltip ="Select option to display or hide mitigated levels / Select mitigation method")
 
-// Liquidity Box Style Settings
+/// Liquidity Box Style Settings
 box_width					= input.float		(defval = -5,			title = "Box Style",			inline = "5",			group = grpLIQUID,		minval = -50,	maxval = 50,	step = 0.5)
 length_extend_liq			= input.int			(defval = 20,			title = "↔",					inline = "5",			group = grpLIQUID,		minval = 0,		maxval = 500)
 extentionMax				= input.bool		(defval = false,		title = "Extend",				inline = "5",			group = grpLIQUID,		tooltip = "Set the box width for liquidity levels / Set the box length of Liquidity Levels / Toggle to extend Liquidity Levels")
@@ -386,18 +390,20 @@ _highLineStyleHTF			= "Solid"
 highLineStyleHTF			= _highLineStyleHTF == "Solid" ? line.style_solid : _highLineStyleHTF == "Dashed" ? line.style_dashed : line.style_dotted
 lineWidthHTF				= 2
 
-// Liquidity Text Style Settings
+/// Liquidity Text Style Settings
 textSize					= input.string		(defval = "S",			title = "Text Options",			inline = '6',			group = grpLIQUID,		options = ["XS", "S", "M", "L", "XL"])
 liquidity_text_color		= input.color		(color.new(AmeTrGrayNickel, 75),	title = '',			inline = '6',			group = grpLIQUID)
 show_text					= input.bool		(defval = true,			title = "Text",					inline = '6',			group = grpLIQUID)
 show_volume					= input.bool		(defval = true,			title = "Volume",				inline = '6',			group = grpLIQUID)
 show_percentage				= input.bool		(defval = true,			title = "%",					inline = '6',			group = grpLIQUID,		tooltip = "Select Size / color for text displaying inside the Liquidity Levels / Toggle Display: Text , Volume , %")
 
-//// ─────────────────────── 
-/// ─── BOS & CHOCH MARKET STRUCTURE INPUT SETTINGS
-//// ─────────────────────── 
-// Internal BOS & CHOCH Settings
-var grpMARKETST				= '───── MARKET STRUCTURE ─────'
+//// ───────────────────────
+/// ─── SMC + ──────
+/// ─── Bos & Choch Market Structure Input Settings
+//// ───────────────────────
+
+/// Internal BOS & CHOCH Settings
+var grpMARKETST				= '─── Estructura de Mercado ───'
 
 showInternalMS				= input				(defval = true,			title = "Internal MS Length",			inline = "2",		group = grpMARKETST)
 internalLength				= input.int			(defval = 10,			title = "",								inline = "2",		group = grpMARKETST,		tooltip = "Toggle visibility of Internal Market Structure / Set the length for Internal Market Structure")
@@ -408,7 +414,7 @@ internalBearColor			= input.color		(color.new(AmeTrGrayNickel, 60), title = "",	
 label_size_Internal_s		= label_sizes_Internal_ == "S" ? size.tiny : label_sizes_Internal_ == "M" ? size.small : label_sizes_Internal_ == "L" ? size.normal : size.small
 label_size_Internal			= label_size_Internal_s
 
-// External BOS(+) & CHOCH(+) Settings  AllenMint60
+/// External BOS(+) & CHOCH(+) Settings  AllenMint60
 showExternalMS				= input				(defval = true,			title = "External MS Length",			inline = "3",		group = grpMARKETST)
 externalLength				= input.int			(defval = 50,			title = "",								inline = "3",		group = grpMARKETST,		tooltip = "Toggle visibility of External Market Structure / Set the length for External Market Structure")
 label_size_External_		= input.string		(defval = "M",			title = "External MS Text Style", 		inline = "3_",		group = grpMARKETST,		options = ["S", "M","L"])
@@ -418,7 +424,7 @@ externalBearColor			= input.color		(color.new(AmeTrGrayNickel, 35),	title = "",	
 label_size_External_s		= label_size_External_ == "S" ? size.tiny : label_size_External_ == "M" ? size.small : label_size_External_ == "L" ? size.normal : size.small
 label_size_External			= label_size_External_s
 
-// EQH & EQL Settings
+/// EQH & EQL Settings
 show_equal_highlow			= input				(defval = true,			title = 'EQL & EQH Threshold',			inline = '4',		group = grpMARKETST)
 eq_threshold				= input.float		(defval = 0.3,			title = '',								inline = '4',		group = grpMARKETST,		minval = 0,		maxval = 10,	step=0.1,		tooltip = "Toggle visibility of Equal Lows & Highs / Set the threshold for Equal Lows & Highs")
 label_size_Equal_			= input.string		(defval = "S",			title = "EQL & EQH Text Style", 		inline = "4_",		group = grpMARKETST,		options = ["S", "M","L"])
@@ -428,7 +434,7 @@ eq_bear_color				= input.color		(color.new(AmeTrGrayNickel, 35),	title = '',				
 label_size_Equal_s			= label_size_Equal_ == "S" ? size.tiny : label_size_Equal_ == "M" ? size.small : label_size_Equal_ == "L" ? size.normal : size.small
 label_size_Equal			= label_size_Equal_s
 
-// Swing Point Settings
+/// Swing Point Settings
 showSwing					= input.bool		(defval = true,			title = 'Swing Points Length',			inline = "1",		group = grpMARKETST)
 swingSize_swing				= input.int			(defval = 10,			title = '',								inline = "1",		group = grpMARKETST,		tooltip = "Toggle visibility of Swing Points / Set the length for Swing Points")
 label_sizes_swing_			= input.string		(defval = "M",			title = "Swing Points Text Style",		inline = "1_",		group = grpMARKETST,		options = ["S", "M","L"],		tooltip = "Set the size of text for Swing Points / Select color for Swing Points")
@@ -441,10 +447,11 @@ label_size_swing_s			= label_sizes_swing_ == "S" ? size.tiny : label_sizes_swing
 label_size_swing			= label_size_swing_s
 
 //// ───────────────────────
-/// ─── GLOBAL VARIABLES
+/// ─── SMC + ──────
+/// ─── Global Variables
 //// ───────────────────────
 
-// GLOBAL VARIABLES FUNCTIONS
+/// global variables functions
 i_bullishfvgcolor			= color.new(BrLiYel40, 90)
 i_bearishfvgcolor			= color.new(BrLiYel40, 90)
 i_textColor					= AmeTrGrayNickel
@@ -502,8 +509,10 @@ bullish_OB_Break = false
 bearish_OB_Break = false
 
 //// ───────────────────────
-/// ─── OB CALCULATIONS & FUNCTIONS
+/// ─── SMC + ──────
+/// ─── Ob Calculations & Functions
 //// ───────────────────────
+
 type orderBlockInfo
 	float top
 	float bottom
@@ -737,7 +746,7 @@ findOrderBlocks () =>
 		max = useBody ? math.max(close, open) : high
 		min = useBody ? math.min(close, open) : low
 
-		// Bullish Order Block
+		/// Bullish Order Block
 		bullishBreaked = 0
 
 		if array.size(bullishOrderBlocksList) > 0
@@ -777,7 +786,7 @@ findOrderBlocks () =>
 				if array.size(bullishOrderBlocksList) > maxOrderBlocks
 					array.pop(bullishOrderBlocksList)
 
-		// Bearish Order Block
+		/// Bearish Order Block
 		bearishBreaked = 0
 
 		if array.size(bearishOrderBlocksList) > 0
@@ -961,14 +970,16 @@ if barstate.isconfirmed
 	handleOrderBlocksFinal()
 
 //// ───────────────────────
-/// ─── FAIR VALUE GAPS CALCULATIONS & FUNCTIONS
+/// ─── SMC + ──────
+/// ─── FVG Calculations & Functions
 //// ───────────────────────
+
 lineStyle(x) =>
 	switch x
 		'Solid' => line.style_solid
 		'Dashed' => line.style_dashed
 		'Dotted' => line.style_dotted
-// FAIR VALUE GAPS FUNCTION //
+/// fair value gaps function
 var htfH = open
 var htfL = open
 
@@ -1015,7 +1026,7 @@ create_fvg_func(_upperlimit,_lowerlimit,_midlimit,_bar,_boxholder,_boxholder_fil
 	array.push(_lowholder,line.new(_bar,_lowerlimit,_bar+(timediff)*length_extend,_lowerlimit,color = i_fillByMid?boxbgcolor:na, extend = fvg_extend ? extend.right:extend.none,width=1,xloc = xloc.bar_time))
 	array.push(_highholder,line.new(_bar,_upperlimit,_bar+(timediff)*length_extend,_upperlimit,color = i_fillByMid?boxbgcolor:na, extend = fvg_extend ? extend.right:extend.none,width=1,xloc = xloc.bar_time))
 
-//checks for gap //
+/// checks for gap
 check_fvg_func(_close,_high,_highp2,_low,_lowp2,_open,_bar,_htf)=>
 	gap=0
 	thold_ = (ta.highest(_high,300) - ta.lowest(_low,300)) * math.max(max_width_fvg, 0.1) / 100.
@@ -1041,7 +1052,7 @@ check_fvg_func(_close,_high,_highp2,_low,_lowp2,_open,_bar,_htf)=>
 			
 	gap
 
-// MITIGATION FAIR VALUE GAPS
+/// mitigation fair value gaps
 delete_fvg_func(_currentgap,_currentgap_fill,_i,_boxholder,_boxholder_fill,_midholder,_highholder,_lowholder,_labelholder)=>
    
 	array.remove(_boxholder,_i)
@@ -1073,7 +1084,7 @@ delete_fvg_func(_currentgap,_currentgap_fill,_i,_boxholder,_boxholder_fill,_midh
 		box.set_extend(_currentgap,extend.none)
 		box.set_right(_currentgap,time)
 
-// CHECKS FILLED FAIR VALUE GAPS
+/// checks filled fair value gaps
 validate_fvg_func(_high,_low)=>
 
 	fvg_removed=0
@@ -1267,7 +1278,7 @@ validate_fvg_func(_high,_low)=>
 
 	fvg_removed
 				
-// FUNCTION DETRMINE NEW BAR
+/// function detrmine new bar
 if is_newbar(i_tf)
 	htfH := high
 	htfL := low
@@ -1318,10 +1329,11 @@ if array.size(bearish_low_holder) > max_fvg
 n=bar_index
 fvg_removed=validate_fvg_func(high,low)
 
+//// ───────────────────────
+/// ─── SMC + ──────
+/// ─── Liquidity Levels Calculations & Functions
+//// ───────────────────────
 
-//// ───────────────────────
-/// ─── LIQUIDITY LEVELS CALCULATIONS & FUNCTIONS
-//// ───────────────────────
 highLineColor      = highLineColorHTF
 lowLineColor       = lowLineColorHTF
 highBoxBgColor     = highLineColorHTF
@@ -1428,7 +1440,7 @@ volume_percentage = (vol / highest_volume) * 100
 format_volume(vol) =>
 	vol >= 1000000000 ? str.tostring(vol / 1000000000, '#.##') + "B" : vol >= 1000000 ? str.tostring(vol / 1000000, '#.##') + "M" : str.tostring(vol / 1000, '#.##') + "K"
 
-// Function to format the timeframe string
+/// Function to format the timeframe string
 format_tf(tf) =>
 	tf == "1" ? "1Min" :tf == "2" ? "2Min" : tf == "3" ? "3Min" : tf == "5" ? "5Min" : tf == "10" ? "10Min" : tf == "15" ? "15Min" : tf == "30" ? "30Min" : tf == "45" ? "45Min" : tf == "60" ? "1H" : tf == "120" ? "2H" : tf == "180" ? "3H" : tf == "240" ? "4H" :  tf == "D" ? "1D" : tf == "W" ? "1W" : tf == "M" ? "1M" :  tf == "M" ? "3M" :tf == "M" ? "6M" : tf == "Y" ? "1Y" : tf
 
@@ -1463,15 +1475,17 @@ if currentTF
 			array.push(lowBoxArrayHTF, box.new(_time[dis], _low[dis], _time[+1], y1, bgcolor = lowLineColorHTF, border_color = lowBoxBorderColorHTF, xloc = xloc.bar_time, border_style = highLineStyleHTF, extend = extentionMax ? extend.right : extend.none, border_width = lineWidthHTF, text = volume_text, text_halign = text.align_center, text_color = liquidity_text_color, text_size = label_size_external))
 			display_limit_boxes(lowBoxArrayHTF, displayLimitSell)
 
-// Extend and remove old lines and boxes
+/// Extend and remove old lines and boxes
 extend_line_to_current(highLineArrayHTF, length_extend_liq, timediff)
 extend_line_to_current(lowLineArrayHTF, length_extend_liq, timediff)
 extend_box_to_current(highBoxArrayHTF, length_extend_liq, timediff)
 extend_box_to_current(lowBoxArrayHTF, length_extend_liq, timediff)
 
 //// ───────────────────────
-/// ─── MARKET STRUCTURE CALCULATIONS & FUNCTION
+/// ─── SMC + ──────
+/// ─── Market Structure Calculations & Function
 //// ───────────────────────
+
 bosConfType      = 'Candle High'
 CHOCH            = true
 pivot_high_found = ta.pivothigh(high, swingSize_swing, swingSize_swing)
@@ -1511,7 +1525,7 @@ if higher_lows and showSwing
 if lower_lows and showSwing
 	label.new(bar_index - swingSize_swing, pivot_low_found, 'LL', color=CLEAR, style=label.style_label_up, textcolor=swingColor, size=label_size_swing_s)
 
-// EQH & EQL
+/// EQH & EQL
 atr_ = ta.atr(200)
 var high_eqh_pre = 0., var eq_top_x = 0, var low_eqh_pre = 0., var eq_btm_x = 0
 
@@ -1594,20 +1608,22 @@ if ta.crossunder(close, y_dn) and crossed_down
 		Show_MS(x_dn, y_dn, MSS ? 'CHOCH+' : 'BOS+', externalBearColor, false, false, label_size_External_s)
 
 //// ───────────────────────
-/// ─── ALERTS
+/// ─── SMC + ──────
+/// ─── Alerts ─────
 //// ───────────────────────
-// FVG ALERTS //
+
+/// fvg alerts
 if is_newbar(i_tf) and (i_mtf == "Current + HTF" or i_mtf == "HTF") and show_fvg and barstate.isconfirmed
 	fvg_gap:=check_fvg_func(sClose,htfH,sHighP2,htfL,sLowP2,sOpen,time[2],true)
 	
 alertcondition(fvg_gap==1,"Bullish FVG","Bullish FVG Found")
 alertcondition(fvg_gap==-1,"Bearish FVG","Bearish FVG Found")
 
-// LIQUIDITY ALERTS //
+/// liquidity alerts
 alertcondition(remove_mitigated_lines(highLineArrayHTF, "High", _candleType, mitiOptions, highLineColorHTF, highLineStyleHTF, lineWidthHTF, displayLimitBuy) or remove_mitigated_boxes(highBoxArrayHTF, "High", _candleType, mitiOptions, highBoxBgColor, highBoxBorderColorHTF, highLineStyleHTF, lineWidthHTF, displayLimitBuy), "Internal Buy Side Liquidity Level Break", "Internal Buy Side Liquidity Level Broken")
 alertcondition(remove_mitigated_lines(lowLineArrayHTF, "Low", _candleType, mitiOptions, lowLineColorHTF, highLineStyleHTF, lineWidthHTF, displayLimitSell) or remove_mitigated_boxes(lowBoxArrayHTF, "Low", _candleType, mitiOptions, lowBoxBgColor, lowBoxBorderColorHTF, highLineStyleHTF, lineWidthHTF, displayLimitSell), "Internal Sell Side Liquidity Level Break", "Internal Sell Side Liquidity Level Broken")
 
-// MARKET STRUCTURE ALERTS //
+/// market structure alerts
 alertcondition(bull_CHOCH, "Bullish CHOCH", 'Bullish CHOCH Found ')
 alertcondition(bear_CHOCH, "Bearish CHOCH", 'Bearish CHOCH Found ')
 alertcondition(bull_bos, "Bullish BOS", 'Bullish BOS Found ')
